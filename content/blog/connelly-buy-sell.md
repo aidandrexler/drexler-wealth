@@ -1,0 +1,14 @@
+---
+title: What Business Owners Must Know About Connelly v. United States
+date: May 13, 2026
+description: The Supreme Court ruled 9-0 in 2024 on buy-sell agreements funded with corporate-owned life insurance. If yours hasn't been reviewed since, it has.
+readTime: 5 min read
+---
+
+For decades, many closely held businesses funded buy-sell agreements with corporate-owned life insurance — COLI — on the theory that death proceeds would flow into the corporation, increase the company's value for redemption purposes, and allow surviving owners to buy out a deceased shareholder's interest at a price that reflected the insurance inside the entity. The IRS disagreed with how widely that theory was applied. On June 6, 2024, the Supreme Court resolved the dispute unanimously in *Connelly v. United States*, 144 S. Ct. 1406 (2024), holding that life insurance proceeds payable to a corporation must be included in the corporation's fair market value when determining the value of a deceased shareholder's stock under a buy-sell agreement — even when the agreement itself attempted to set price by formula or appraised value without regard to insurance proceeds.
+
+What changed is not the existence of buy-sell agreements or the use of life insurance to fund them. What changed is the valuation baseline. If your agreement values the company without adding back or separately accounting for death proceeds that inflate balance sheet value at the moment of a shareholder's death, the agreed price in the document may no longer reflect economic reality — and may no longer produce the tax or liquidity outcome your founders intended. Surviving shareholders may face a redemption obligation priced higher than the cash the insurance was supposed to deliver. Estates may report values inconsistent with what the buy-sell formula produces. The mismatch between contract language and federal valuation principles is now settled law, not an open planning question.
+
+The businesses most affected are the ones that have not touched their buy-sell since COLI was put in place: multi-owner S corporations and C corporations in professional services, real estate, and family-operated industries throughout South Florida. If your agreement uses a fixed formula, a book-value method, or an appraisal process that was drafted before 2024 and never updated for *Connelly*, assume it has a problem until Florida counsel and your CPA say otherwise.
+
+Ask your attorney and CPA this specific question: *Under our current buy-sell and our corporate-owned policies, does Connelly require us to include death proceeds in company value at redemption — and if so, does our existing formula still fund the buyout we intended?* This memo is not legal or tax advice. The intersection of corporate law, estate planning, and federal valuation is not a DIY repair.

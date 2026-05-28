@@ -1,0 +1,97 @@
+:root {
+  --ink: #0c1117;
+  --slate: #1a2535;
+  --fog: #2e3d52;
+  --steel: #4a5e75;
+  --mist: #8a9bb0;
+  --smoke: #c4cedb;
+  --paper: #f2ede6;
+  --cream: #faf7f2;
+  --gold: #b08d4c;
+  --gold-l: #c9a96e;
+  --gold-xl: #e8d5a8;
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-ui: 'Montserrat', system-ui, sans-serif;
+
+  --max-width: 1080px;
+  --section-pad: 120px;
+  --section-pad-mobile: 60px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-ui);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--steel);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.eyebrow {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.section-pad {
+  padding-top: var(--section-pad);
+  padding-bottom: var(--section-pad);
+}
+
+@media (max-width: 768px) {
+  .section-heading {
+    font-size: 32px;
+  }
+
+  .section-pad {
+    padding-top: var(--section-pad-mobile);
+    padding-bottom: var(--section-pad-mobile);
+  }
+}

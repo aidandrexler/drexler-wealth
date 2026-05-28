@@ -1,0 +1,51 @@
+.article-card {
+  background: var(--paper);
+  border: 1px solid var(--smoke);
+  padding: 32px;
+  transition: border-color 0.2s ease;
+}
+
+.article-card:hover {
+  border-color: var(--gold);
+}
+
+.article-card__date {
+  font-size: 10px;
+  color: var(--mist);
+}
+
+.article-card__title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--fog);
+  margin-top: 12px;
+  line-height: 1.35;
+}
+
+.article-card__title a {
+  transition: color 0.2s ease;
+}
+
+.article-card__title a:hover {
+  color: var(--gold);
+}
+
+.article-card__desc {
+  font-size: 12px;
+  color: var(--steel);
+  line-height: 1.7;
+  margin-top: 12px;
+}
+
+.article-card__link {
+  display: block;
+  font-size: 11px;
+  color: var(--gold);
+  margin-top: 24px;
+  transition: color 0.2s ease;
+}
+
+.article-card__link:hover {
+  color: var(--gold-l);
+}
