@@ -31,10 +31,11 @@ const GAP_CARD_DATA = {
     {
       title: 'No Professional Coordination',
       scenario:
-        "You are your own coordinator. Florida's asset protection framework — Article X §4, the Olmstead decision, Connelly v. United States (2024) — operates by default, and default is rarely optimal for someone with meaningful assets.",
-      authority: 'Fla. Const. Art. X §4 · Fla. Stat. §222.14 · Olmstead v. FTC',
+        "You are coordinating your own financial and estate plan without professional guidance. Florida's asset protection framework — the constitutional homestead exemption, the tenancy-by-entireties rules for joint accounts, the creditor protection for retirement accounts — all operate by default. Default is not always wrong. But it is rarely optimal for someone with meaningful assets, a business, a professional license, or a family that depends on their income. The gap at this stage is not what you have done wrong. It is what you do not yet know to ask.",
+      authority:
+        'Gassman & Markham on Florida and Federal Asset Protection Law (2025 ed.), Introduction',
       question:
-        'Do any of your bank or brokerage accounts carry a tenancy by the entireties designation if you are married?',
+        'If something happened to you tomorrow — disability or death — does anyone in your family know where every account is, who the beneficiaries are, and how to access what they need in the first 30 days?',
       calibration: CALIBRATION_SYSTEM.TITLING,
     },
   ],
@@ -42,10 +43,11 @@ const GAP_CARD_DATA = {
     {
       title: 'Portfolio Without a Plan',
       scenario:
-        'Your advisor manages investments but cannot draft documents, verify account titling, or confirm beneficiary designations match estate intent. The IRA beneficiary designation overrides your will by contract.',
-      authority: 'Egelhoff v. Egelhoff, 532 U.S. 141 (2001) · ERISA §514',
+        "Your financial adviser manages your investments and monitors your portfolio. But a financial adviser cannot draft legal documents, re-title your accounts, or review whether your beneficiary designations still reflect your current family situation. Here is the specific risk: every IRA, 401(k), life insurance policy, and annuity in your name has a beneficiary designation form on file with the custodian. That form is a legally binding contract. It supersedes your will. It supersedes your trust. The U.S. Supreme Court confirmed this in Kennedy v. Plan Administrator for DuPont Savings and Investment Plan (2009), holding that a plan must pay the designated beneficiary even when a divorce decree said otherwise. Your adviser has no way to know if those designations are current unless you have told them — and even then, they cannot update them for you.",
+      authority:
+        'Kennedy v. Plan Administrator, 555 U.S. 285 (2009) · Choate, Life and Death Planning for Retirement Benefits (8th ed. 2019)',
       question:
-        'When did you last review every beneficiary designation on your IRAs, 401(k), life insurance, and annuity accounts?',
+        'When did you last review — on paper, not from memory — the primary and contingent beneficiary designations on every retirement account, life insurance policy, and annuity you own? If the answer involves a life event more than 12 months ago, the review is overdue.',
       calibration: CALIBRATION_SYSTEM.TITLING,
     },
   ],
@@ -53,10 +55,11 @@ const GAP_CARD_DATA = {
     {
       title: 'Trust Without Funding',
       scenario:
-        "A signed revocable trust that doesn't own your brokerage account, real estate, or business interest is paper and ink. The trust controls only what is titled to it.",
-      authority: 'Fla. Stat. §736.0401 · §736.0801',
+        "Your estate attorney drafted a revocable living trust — a legal structure designed to control how your assets are distributed at death and managed during incapacity, while avoiding the public probate court process. Here is what almost no one tells clients after signing: the trust only controls what is legally titled to it. Signing the trust document creates the legal structure. Funding the trust means actually re-titling your assets — changing the name on your brokerage account from 'John Smith' to 'John Smith, Trustee of the John Smith Revocable Trust dated January 1, 2024.' Until that re-titling happens, your brokerage account passes through probate (a public Florida court process) regardless of what the trust document says. In practice, the most common scenario: a client signs a revocable trust, opens two new brokerage accounts after that meeting, and never re-titles them. The attorney assumed the client would handle the funding. The client assumed the attorney handled everything. Neither assumption was correct.",
+      authority:
+        'Gassman & Markham (2025 ed.) Ch. 5, citing Fla. Stat. §736.0401 · Pfau, Retirement Planning Guidebook (2021), Ch. 11 (on estate plan components)',
       question:
-        'Has every account and property you own been re-titled to reflect your trust as owner?',
+        'Has every brokerage account, bank account, and real estate parcel you own been re-titled to reflect your revocable trust as the legal owner — not just listed in an appendix to the trust document?',
       calibration: CALIBRATION_SYSTEM.FUNDING,
     },
   ],
@@ -64,10 +67,11 @@ const GAP_CARD_DATA = {
     {
       title: 'Tax Returns Without Estate Coordination',
       scenario:
-        'Your CPA files accurately but does not design asset titling, draft documents, or monitor beneficiary designations. Basis step-up strategy at death requires coordination between the return and the plan.',
-      authority: 'IRC §1014 (step-up in basis)',
+        "Your CPA files your returns accurately and may identify certain tax planning opportunities. But the CPA's visibility is backward-looking — they see what happened last year. They do not automatically design how your assets are titled, who inherits them, or what happens to the accumulated value inside your retirement accounts after you die. Here is a specific example of what falls through the gap: your CPA may know that you have a $600,000 IRA. They may not know that the beneficiary is a former business partner from 2009, or that you named your estate as beneficiary because the account was opened before you married. Under SECURE 2.0, most non-spouse beneficiaries who inherit an IRA face the '10-year rule' — the entire account must be distributed (and fully taxed as ordinary income) within 10 years of your death. If your adult child inherits a $600,000 IRA while earning $300,000 per year as a surgeon, the forced distributions could be taxed at the 37% federal bracket. The CPA did not create this problem. But without coordination with your estate attorney and financial adviser, no one is looking at the whole picture.",
+      authority:
+        'Choate, Estate Planning for Retirement Benefits (Sept 2025 outline), Part 3 (10-year rule) · SECURE Act §401(a)(9)(H) · Pfau, Retirement Planning Guidebook (2021) Ch. 11',
       question:
-        'Does your CPA know how your assets are titled and who inherits?',
+        'Does your CPA know who inherits each of your retirement accounts — and have they modeled the tax consequences for those beneficiaries under the current 10-year rule?',
       calibration: CALIBRATION_SYSTEM.DOCUMENTS,
     },
   ],
@@ -75,19 +79,21 @@ const GAP_CARD_DATA = {
     {
       title: 'Gift Tax Compliance Gap',
       scenario:
-        'Attorney drafted an ILIT and advisor placed the policy inside. If annual Crummey notices were not sent within 30 days of each premium, those premiums may have consumed lifetime exemption, not annual exclusion.',
-      authority: 'IRC §2503(b) · Rev. Rul. 81-7',
+        "Your attorney created an Irrevocable Life Insurance Trust (ILIT) — a trust that owns a life insurance policy on your life, keeping the death benefit outside of your taxable estate. Your financial adviser purchased the policy and transfers premium money to the trust each year. What neither may have confirmed: each time you transfer money to the ILIT, a technical requirement must be met to treat the transfer as a gift eligible for your annual gift-tax exclusion (currently $18,000 per beneficiary per year under IRC §2503(b)). This requirement is called a 'Crummey notice' — a written notice to each trust beneficiary that they have the right to withdraw their share of the gift within a short window (typically 30 days). Without these notices being sent within that window every single year, the IRS can reclassify those premium transfers as using lifetime gift-tax exemption rather than the annual exclusion. Over a 10-year permanent life policy, missing Crummey notices can mean hundreds of thousands of dollars of lifetime exemption consumed that you did not intend to use. It is one of the most easily preventable compliance failures in irrevocable trust planning — and one of the most commonly overlooked.",
+      authority:
+        'IRC §2503(b) · Rev. Rul. 81-7 · Crummey v. Commissioner, 397 F.2d 82 (9th Cir. 1968)',
       question:
-        'Has your attorney confirmed Crummey notices were sent each year?',
+        'Has your attorney or trust administrator confirmed in writing that Crummey notices were sent to every ILIT beneficiary within 30 days of each premium transfer, every year since the trust was created?',
       calibration: CALIBRATION_SYSTEM.DOCUMENTS,
     },
     {
       title: 'Missing CPA on Roth Conversion',
       scenario:
-        'Advisor models a Roth conversion. Income stacks with other income in the conversion year. Without CPA coordination, the tax cost may exceed the long-term benefit.',
-      authority: 'IRC §408A · Reg. §1.408A-4',
+        "Your financial adviser has shown you a projection of the long-term benefits of a Roth conversion — moving money from a traditional IRA (where growth is tax-deferred and withdrawals are taxed as ordinary income) into a Roth IRA (where qualifying withdrawals are completely tax-free for the rest of your life and for your beneficiaries). The long-term math is often compelling. But a Roth conversion triggers taxable income in the year it is executed — that income stacks on top of all your other income for that year and is taxed at your marginal rate. Without your CPA involved before the conversion is executed, three specific problems can go undetected: (1) the conversion amount may push you into a higher IRMAA bracket for Medicare premiums two years later; (2) the conversion income may cause more of your Social Security benefits to become taxable, creating what Pfau calls the 'tax torpedo'; (3) the timing may be in a year when other income events — a business sale, a real estate transaction, a large bonus — are already filling your lower brackets. The adviser sees the 30-year projection. The CPA sees this year's tax return. Both are necessary for the decision.",
+      authority:
+        'Pfau, Retirement Planning Guidebook (2021) Ch. 10 (Social Security tax torpedo, IRMAA, strategic Roth conversions) · IRC §408A',
       question:
-        'Does your CPA model Roth conversion years with your advisor before execution?',
+        'Before your last Roth conversion was executed, did your CPA model: (1) the impact on Medicare premiums two years forward; (2) the Social Security taxation impact; and (3) any other income events in that same tax year that might make the conversion cost more than projected?',
       calibration: CALIBRATION_SYSTEM.DOCUMENTS,
     },
   ],
@@ -104,9 +110,11 @@ const GAP_CARD_DATA = {
     {
       title: 'Buy-Sell Funding Gap',
       scenario:
-        'Attorney drafted the buy-sell, CPA reviewed tax treatment. But if no advisor confirmed life insurance funding actually exists and is sufficient, the agreement is a promise, not a guarantee.',
-      authority: 'Connelly v. United States, 144 S. Ct. 1406 (2024)',
-      question: 'Has your buy-sell been reviewed by counsel since June 2024?',
+        "Your estate attorney drafted the buy-sell agreement — a legally binding contract between business owners that governs what happens to each owner's share if one owner dies, becomes disabled, divorces, or wants to exit. Your CPA reviewed the tax treatment. But a critical question may have gone unanswered: is the buy-sell actually funded with sufficient life and disability insurance to honor the agreement's obligations? A buy-sell agreement that promises to pay a surviving owner $2M for their deceased partner's share — but has no insurance in place to deliver that cash — is a promise, not a guarantee. There is also a significant legal update every business owner with partners must know: in Connelly v. United States (June 2024), the U.S. Supreme Court held 9-0 that life insurance proceeds used by a corporation to fund a stock redemption must be included in calculating the corporation's fair market value for estate tax purposes. This reversed how many buy-sell agreements were structured. Agreements drafted before June 2024 under entity-redemption structures may now generate unexpected estate tax liability for the deceased owner's estate.",
+      authority:
+        'Connelly v. United States, 144 S. Ct. 1406 (2024) · Gassman & Markham (2025 ed.) Ch. 1',
+      question:
+        "Has your buy-sell agreement been reviewed by both your business attorney and your CPA since June 2024? And has your financial adviser confirmed the life and disability insurance funding is sufficient to actually honor the agreement's obligations at current business valuations?",
       calibration: CALIBRATION_SYSTEM.ENTITIES,
     },
   ],
@@ -114,19 +122,21 @@ const GAP_CARD_DATA = {
     {
       title: 'Beneficiary Designations Override the Return',
       scenario:
-        'CPA and advisor optimize tax-efficient withdrawals. But if the IRA beneficiary is an ex-spouse or deceased parent, neither the return nor the portfolio can fix it. Designations supersede the will by contract.',
-      authority: 'Kennedy v. Plan Administrator, 555 U.S. 285 (2009)',
+        "Your CPA optimizes your tax-deferred withdrawals and your adviser manages your portfolio. Together, they have built a thoughtful plan for generating income in retirement. None of it matters if the beneficiary designations on your retirement accounts are wrong. Here is why this is the most consequential and most overlooked gap in American wealth planning: a beneficiary designation on a retirement account (IRA, 401k, 403b), life insurance policy, or annuity is a legally binding contract. It supersedes your will. It supersedes your trust. The U.S. Supreme Court confirmed this in Kennedy v. Plan Administrator for DuPont (2009). Common disasters that result from outdated designations: a former spouse inheriting a $400,000 IRA because the designation was never updated after divorce; a deceased parent named as primary beneficiary, causing the account to flow to 'my estate' and go through probate; an adult child inheriting a large IRA at peak earning years, forced by the 10-year rule under SECURE 2.0 to distribute the entire account within a decade — potentially all taxed at 37%. Under current law, most non-spouse beneficiaries of inherited IRAs cannot stretch distributions over their lifetime. They must empty the account within 10 years of the original owner's death, and if the owner died after their required beginning date, must also take annual distributions during the first nine years.",
+      authority:
+        'Kennedy v. Plan Administrator, 555 U.S. 285 (2009) · Choate, Estate Planning for Retirement Benefits (Sept 2025 outline) — Part 3 (10-year rule) · Choate, Life and Death Planning for Retirement Benefits (8th ed. 2019)',
       question:
-        'Have you named a contingent beneficiary on every retirement account and life insurance policy?',
+        'Have you reviewed and confirmed — on paper, not from memory — every primary and contingent beneficiary designation on every retirement account, life insurance policy, and annuity in the past 12 months?',
       calibration: CALIBRATION_SYSTEM.TITLING,
     },
     {
       title: 'No Estate Documents',
       scenario:
-        "Advisor manages the portfolio and CPA optimizes taxes, but there is no will, no trust, no durable POA, no healthcare surrogate. Florida's intestacy statute decides who inherits.",
-      authority: 'Fla. Stat. §732.102 · §765.202',
+        "Your adviser manages the investments. Your CPA files the returns. But there are four documents that no financial adviser or CPA can create for you — because they require a licensed attorney — and without them, Florida law decides what happens to you and your family in a crisis. The four documents every adult Florida resident needs: (1) A will or revocable living trust, specifying who inherits what. Without one, Florida's intestacy statute (Fla. Stat. §732.102) decides — and the result may surprise you. (2) A durable financial power of attorney, naming someone to manage your finances if you are incapacitated. Without one, your family may need a court-supervised guardianship proceeding to access your accounts — which is expensive, public, and slow. (3) A healthcare surrogate designation (Fla. Stat. §765.202), naming someone to make medical decisions if you cannot. (4) A living will, specifying your wishes about end-of-life care. These documents cost a few hundred to a few thousand dollars to have an attorney prepare. Not having them can cost your family far more — in court fees, family conflict, and decisions made by strangers instead of the people you trust.",
+      authority:
+        'Fla. Stat. §732.102 (intestate succession) · Fla. Stat. §765.202 (healthcare surrogate) · Pfau, Retirement Planning Guidebook (2021) Ch. 11 (estate plan components)',
       question:
-        'Do you have a current will or revocable trust, durable POA, and healthcare surrogate under Florida law?',
+        'Do you have a current will or revocable trust, durable financial power of attorney, and healthcare surrogate designation — all executed under Florida law after you established Florida residency?',
       calibration: CALIBRATION_SYSTEM.DOCUMENTS,
     },
   ],
@@ -134,20 +144,21 @@ const GAP_CARD_DATA = {
     {
       title: 'The Integration Gap',
       scenario:
-        'You have all three. The most common gap at this level is not what any one of them does — it is that they have never met together. A quarterly coordination call prevents the most expensive planning errors.',
+        "You have all three professionals. This is genuinely rare — most affluent families have one or two but not all three working together. At this level, the most common remaining gap is not what any individual professional is doing. It is that they have never been in the same room together. Your attorney knows your trust documents. Your CPA knows your tax return. Your adviser knows your portfolio. But does your attorney know that you opened two new brokerage accounts last year that were never re-titled to the trust? Does your CPA know that your adviser is planning a Roth conversion this year that will push your income into the IRMAA surcharge threshold? Does your adviser know that your attorney created an ILIT five years ago and that the Crummey notices may never have been sent? The integration gap is not a professional failure. It is a coordination failure. The solution is simple and costs nothing: one annual meeting — or even one annual phone call — where all three are present and share a current picture of your situation.",
       authority:
-        'Comiter Singer (Palm Beach Gardens) on integrated advisory teams',
+        'Pfau, Retirement Planning Guidebook (2021) Ch. 13 (working with a financial planner and coordinating specialists)',
       question:
-        'In the past 12 months, have your attorney, CPA, and advisor spoken directly to each other about your situation without you as relay?',
+        'In the past 12 months, have your attorney, CPA, and financial adviser spoken directly to each other about your situation — not through you as a relay, but directly — to share what each of them knows?',
       calibration: CALIBRATION_SYSTEM.DOCUMENTS,
     },
     {
       title: 'Out-of-State Documents, Florida Assets',
       scenario:
-        'Many PBC residents arrived with estate documents drafted under New York, New Jersey, or Illinois law. Florida has distinct homestead rules, trust code (Ch. 736), and no state estate tax. Out-of-state documents may not reflect Florida’s protective framework.',
-      authority: 'Fla. Const. Art. X §4 · Fla. Stat. §732.4015 · Ch. 736',
+        "You have all three advisors. Here is a gap that catches even well-organized transplants: if any of your estate documents were drafted in another state before you established Florida residency, they may not reflect Florida's distinct legal framework — and the differences are significant. Florida has no state estate tax, which changes the optimization for many clients who planned around a state-level tax they no longer owe. Florida's homestead law (Article X §4 of the Florida Constitution) restricts who can inherit your primary residence — a New York will that leaves the house however you want may partially conflict with Florida's homestead devise restrictions (Fla. Stat. §732.4015). Florida's Trust Code (Chapter 736 of the Florida Statutes) has its own requirements for trust administration. And Florida's creditor exemptions — the unlimited homestead, the tenancy-by-entireties protection for joint accounts, the annuity and life insurance cash value exemptions — only apply if your assets are correctly titled and structured under Florida law. Out-of-state documents are not automatically wrong. But they require a Florida review by a Florida-licensed estate planning attorney — and that review has likely not happened if your documents predate your Florida residency.",
+      authority:
+        'Gassman & Markham (2025 ed.) Ch. 2, Ch. 5 · Fla. Const. Art. X §4 · Fla. Stat. §732.4015 · Ch. 736',
       question:
-        'Were your estate documents drafted by a Florida-licensed attorney after you established Florida residency?',
+        'Were your estate planning documents — will, trust, power of attorney — drafted or formally reviewed by a Florida-licensed estate planning attorney after you established permanent Florida residency?',
       calibration: CALIBRATION_SYSTEM.DOCUMENTS,
     },
   ],
@@ -164,18 +175,18 @@ const ARCHITECTURE_LAYERS = [
   {
     id: 'layer1',
     name: 'Insurance Layer',
-    sublabel: 'First Line of Defense',
+    sublabel: 'First Line of Defense — Start Here Before Anything Else',
     color: '#1A4A2E',
-    what: "Personal umbrella ($2M–$25M+ depending on net worth and exposures), professional liability, commercial general liability, personal auto minimum 250/500/100 underlying, homeowner's at $300K+ personal liability.",
+    what: "Personal umbrella liability policy — sized to at least 1× your net worth, with a practical floor of $2M and an upper range of $10M–$25M for high-net-worth families. Professional liability with tail coverage (critical for physicians, attorneys, architects, and other licensed professionals). Commercial general liability if you own a business or investment property. Personal auto policy at minimum 250/500/100 underlying limits (this is often the requirement your umbrella policy demands). Homeowner's policy with at least $300,000 in personal liability coverage. For business owners: key-man life and disability insurance on principals. For anyone with boats, pools, teen drivers, short-term rentals, or a domestic staff: each requires a specific endorsement review.",
     defends:
-      'Insurance is the only layer that pays for defense costs before any other protection is tested. A judgment that exhausts your insurance is the only judgment that ever reaches your other assets.',
+      "Insurance is the only layer in this entire architecture that pays for your legal defense — attorney fees, expert witnesses, court costs — before any other protection is ever tested. Every other layer (your homestead, your retirement accounts, your LLC, your trusts) assumes that a creditor has already won a judgment and is trying to collect. Insurance stops the judgment from being entered in the first place. A well-defended case that costs $200,000 to litigate and settles for $400,000 costs you nothing if your umbrella covers it. The same case without an umbrella forces you to test whether every other layer of your planning actually holds. The answer may be yes — but why test it if you don't have to? Source: Gassman & Markham (2025 ed.) Ch. 1.",
     failure:
-      'The most common failure: umbrella limits set years ago and never increased as net worth grew — or umbrella policies requiring 250/500 underlying auto limits while the auto policy carries only 100/300.',
+      "Two failures dominate. The first: umbrella policy limits set when net worth was $500,000 and never reviewed as it grew to $3M or $5M. The second — and more technical — is a coverage gap that most policyholders do not know exists: umbrella policies require the underlying policies (auto, homeowner's) to carry minimum liability limits before the umbrella kicks in. A typical requirement is 250/500/100 on the auto policy ($250K per person, $500K per accident, $100K property damage). If your auto policy only carries 100/300, there is a gap between what your auto covers and where your umbrella begins. In that gap, you pay personally. Your insurance agent should audit this annually — this is a 20-minute conversation that costs nothing.",
     florida:
-      'Florida has no cap on personal injury jury verdicts. Palm Beach County juries are statistically among the highest-verdict counties in Florida.',
+      "Florida has no cap on personal injury jury verdicts. Palm Beach County is consistently among the highest-verdict counties in the state. A single serious automobile accident — one where another driver is severely injured — can produce a multi-million dollar verdict in a Palm Beach County courtroom. The 'Romeo defense' is not available here: Florida's pure comparative negligence rule means you can be held liable even when the other party was also at fault. An umbrella policy is the single most cost-effective protection purchase available to anyone with meaningful assets. Source: Gassman & Markham (2025 ed.) Ch. 1 (identifying insurance as the foundational creditor defense).",
     calibration:
-      'START HERE. Every other layer assumes a properly sized insurance layer. If it does not exist, no other planning is complete.',
-    authority: 'Fla. Stat. §627.727',
+      "This is Step 1 for a reason. Before your attorney discusses LLCs. Before your adviser discusses trusts. Before anyone discusses advanced structures. The right umbrella policy, properly sized and properly linked to underlying coverage, is more valuable than almost any other protective structure you could put in place — because it prevents the creditor from reaching your protected layers entirely. Call your property and casualty agent this week. Ask two questions: (1) What are my current umbrella limits? (2) Do my underlying auto and homeowner's limits meet my umbrella's requirements?",
+    authority: 'Gassman & Markham (2025 ed.) Ch. 1, Ch. 7 (disability insurance)',
     profileNotes: {
       'Business Owner':
         'Commercial GL + business umbrella + key-man life on principals.',
@@ -190,19 +201,20 @@ const ARCHITECTURE_LAYERS = [
   {
     id: 'layer2',
     name: 'Florida Exempt Assets',
-    sublabel: 'Constitutional & Statutory Bedrock',
+    sublabel:
+      'Constitutional & Statutory Bedrock — Free and Automatic If Correctly Titled',
     color: '#1A4A35',
-    what: 'Homestead (Art. X §4, unlimited value, 1/2-acre municipal / 160-acre rural), tenancy by the entireties accounts (Beal Bank presumption, Loumpos Dec. 2025), retirement accounts (§222.21, unlimited), life insurance cash value and annuity proceeds (§222.14), head-of-household wages (§222.11).',
+    what: 'Five categories of assets receive automatic creditor protection under Florida law — meaning no judgment creditor, regardless of the size of their judgment, can force you to surrender them: (1) YOUR PRIMARY RESIDENCE (homestead): Protected by Article X, Section 4 of the Florida Constitution with no dollar cap. Unlimited in value. Applies to a half-acre of property within a municipality or 160 acres outside one. The Florida Supreme Court held in Havoco of America, Ltd. v. Hill that even a homestead purchased with specific intent to defraud creditors is protected — making this the most powerful single asset protection in any U.S. state. (2) JOINT SPOUSAL ACCOUNTS titled as tenancy by the entireties: Protects joint marital bank and brokerage accounts from the individual creditors of either spouse (not from joint debts of both spouses). The Florida Supreme Court confirmed this in Beal Bank, SSB v. Almand & Associates (2001). (3) RETIREMENT ACCOUNTS (IRAs, 401(k)s, 403(b)s, pensions): Protected under Fla. Stat. §222.21 with no dollar cap. (4) LIFE INSURANCE CASH VALUE and annuity proceeds: Protected under Fla. Stat. §222.14 for Florida residents. (5) HEAD-OF-HOUSEHOLD WAGES: Protected from garnishment under Fla. Stat. §222.11.',
     defends:
-      'Protected by the Florida Constitution and statutes — no judgment creditor can reach them, regardless of judgment amount, as long as properly titled.',
+      "These protections exist because Florida's legislature and constitution have made a policy decision that certain assets are beyond the reach of creditors, period — regardless of the amount owed and regardless of the legitimacy of the creditor's claim. A physician who loses a $5M malpractice verdict cannot be forced to sell their $3M home if it is their Florida homestead. A couple with $1.5M in IRAs retains that money even in bankruptcy, because federal bankruptcy law honors Florida's exemption (§222.21). These protections are not loopholes. They are the law. Source: Gassman & Markham (2025 ed.) Ch. 2, 3, 4, 5, 6, 8.",
     failure:
-      'Deeding the homestead into an LLC removes constitutional protection and replaces it with charging-order protection — which is weaker. Per Olmstead v. FTC (Fla. 2010), this risk is acute for single-member LLCs.',
+      "Deeding the homestead into an LLC. This is the single most common and most costly titling mistake Florida estate planners encounter. The moment your primary residence is owned by an LLC, it loses the unlimited constitutional protection of Article X §4 entirely, and is replaced by the LLC's charging-order protection — which is weaker and can be defeated by domestic creditors. The property tax Save Our Homes cap (limiting annual assessment increases to 3% for homesteaded property) is also lost. The fix is simply to title the property to you personally or to a revocable trust. Note: property held in a revocable trust IS protected — multiple Florida appellate courts have confirmed this since the initial confusion created by In re Bosonetto (2001) was reversed. Source: Gassman & Markham (2025 ed.) Ch. 5 — 'The Florida Constitution provides an almost supernatural protection for homeowners against creditors.'",
     florida:
-      "Florida's homestead protection is absolute — no dollar cap. The strongest homestead protection of any U.S. state.",
+      "Florida residents benefit from a creditor-protection framework that is significantly stronger than most other states. The homestead exemption is unlimited in value — there is no cap. The retirement account exemption under §222.21 protects IRAs and qualified plans without dollar limit, and Florida amended the statute in 2011 to extend this protection to inherited IRAs. The life insurance and annuity cash value exemption under §222.14 protects the accumulated cash value in policies and annuity proceeds — making permanent life insurance and annuities meaningful planning tools for creditor protection, not just income or investment products. These protections are why Florida is one of the most asset-protection-friendly states in the country for residents who structure correctly. Source: Gassman & Markham (2025 ed.) Ch. 3, 4, 8.",
     calibration:
-      'These protections are automatic if assets are correctly titled. Fixing titling costs nothing and requires no attorney for most assets. The second step after insurance.',
+      'These protections are free and automatic — but only if assets are correctly titled. Reviewing your account titling and beneficiary designations costs nothing. It should happen every time you open a new account, buy property, or experience a life event. This is Step 2 — after insurance, before any discussion of trusts, entities, or advanced planning.',
     authority:
-      'Fla. Const. Art. X §4 · Fla. Stat. §§222.11, 222.14, 222.21 · Beal Bank v. Almand (Fla. 2001) · Loumpos v. Bank One (Fla. Dec. 2025)',
+      'Fla. Const. Art. X §4 · Fla. Stat. §§222.11, 222.14, 222.21 · Beal Bank v. Almand (Fla. 2001) · Gassman & Markham (2025 ed.) Ch. 2, 3, 4, 5, 6, 8',
     profileNotes: {
       all: 'Check: Is your primary residence titled in your individual name or jointly as TBE? Not in an LLC or out-of-state trust?',
     },
@@ -210,17 +222,17 @@ const ARCHITECTURE_LAYERS = [
   {
     id: 'layer3',
     name: 'Trust Layer',
-    sublabel: 'Probate Avoidance & Transfer Architecture',
+    sublabel: 'Probate Avoidance, Incapacity Governance & Transfer Architecture',
     color: '#3A3010',
-    what: 'Revocable living trust (probate avoidance, incapacity planning — no creditor protection during life), pour-over will, durable power of attorney, healthcare surrogate. ILIT for life insurance death benefit outside taxable estate.',
+    what: 'Revocable living trust — provides probate avoidance, incapacity planning, and privacy in distribution. Does NOT provide creditor protection during your lifetime (you can revoke it; creditors can reach it). Pour-over will — a backup document that directs any assets not titled to the trust at your death to flow into it, catching anything that was missed. Durable financial power of attorney — names someone to manage your finances if you are incapacitated. Without one, your family may need a court-supervised guardianship proceeding. Healthcare surrogate designation (Fla. Stat. §765.202) — names someone to make medical decisions. Living will — your documented end-of-life care wishes. Irrevocable Life Insurance Trust (ILIT) — if you own significant life insurance, an ILIT keeps the death benefit outside of your taxable estate (preventing IRC §2042 inclusion) and, if properly drafted with a spendthrift provision, protects the death benefit from the beneficiaries\' creditors.',
     defends:
-      'Revocable trust governs estate disposition without probate and provides incapacity governance. ILIT keeps insurance outside your taxable estate and, if properly structured, outside the reach of your creditors.',
+      'The revocable trust serves two functions: it controls the distribution of your estate without the public probate court process, and it provides a governance structure during incapacity — so someone you trust can manage your finances without a judge\'s involvement. The ILIT serves a different function: it keeps your life insurance death benefit outside your taxable estate. A $3M policy owned personally adds $3M to your taxable estate; owned by an ILIT, the death benefit passes to your beneficiaries outside the estate entirely. For those approaching federal estate tax exposure, this distinction can materially reduce estate taxes. Source: Pfau, Retirement Planning Guidebook (2021) Ch. 11.',
     failure:
-      'A signed trust that does not own your brokerage accounts, real estate, or business interests is a document, not a plan. Trust funding is the step most often skipped.',
+      "A signed trust that has never been funded. Funding means actually re-titling your assets — changing the name on your brokerage account, re-deeding real estate, assigning business interests — so the trust legally owns them. Without this step, those assets go through probate (a public Florida court process under Chapter 733 of the Florida Statutes) regardless of what your trust document says. The second most common failure: an ILIT where the annual Crummey notices were never sent. Each year that a premium is transferred to the ILIT without a proper Crummey notice, the IRS may treat that transfer as using lifetime gift-tax exemption rather than the $18,000 annual exclusion. Over 15 years of premiums, this can consume hundreds of thousands of dollars of exemption that the family did not intend to use. Source: Gassman & Markham (2025 ed.) Ch. 5 · IRC §2503(b).",
     florida:
-      'Florida probate (Ch. 733) is public record. A funded revocable trust avoids it entirely. Florida does not recognize self-settled DAPTs — you cannot shield assets from your own creditors by naming yourself a beneficiary of a trust you create.',
+      "Florida probate (Chapter 733) is a public court process. The inventory of your estate, including what you owned and who inherits it, becomes public record. For families with business interests, real estate, or simply a desire for privacy, a funded revocable trust makes the entire distribution private. Florida does NOT recognize self-settled domestic asset protection trusts — a trust you create, naming yourself as a beneficiary, does not protect assets from your own creditors under Florida law. This is a critical distinction from states like Nevada, South Dakota, and Alaska, which do recognize such trusts. Structures marketed as 'asset protection trusts' that work in those states do not provide the same protection for Florida residents with Florida assets and Florida creditors. Source: Gassman & Markham (2025 ed.) Ch. 11.",
     calibration:
-      'Step three — after insurance and after titling. For most people, a funded revocable trust with correct beneficiary designations is the complete solution. Advanced structures come much later.',
+      'Estate documents are Step 3 — after insurance and after titling corrections. For most families — especially those without estates approaching federal estate tax thresholds — a properly funded revocable trust with correct beneficiary designations is the complete answer. Advanced irrevocable structures (SLATs, GRATs, ILITs) belong in Layer 5, only after this foundation is solid.',
     authority:
       'Fla. Stat. Ch. 736 (Trust Code) · Ch. 733 (Probate) · §765.202 · IRC §2042 (ILIT estate inclusion rule)',
     profileNotes: {
@@ -233,17 +245,18 @@ const ARCHITECTURE_LAYERS = [
   {
     id: 'layer4',
     name: 'Entity Layer',
-    sublabel: 'Business & Investment Segregation',
+    sublabel:
+      'Business & Investment Segregation — Relevant for Business Owners and Investors',
     color: '#5A2010',
-    what: 'Multi-member operating LLC or PLLC (licensed professionals), separate holding LLC for real estate and investment assets leased to the operating entity.',
+    what: 'Multi-member operating LLC or PLLC (for licensed professionals) — segregates business liabilities from personal assets. For licensed professionals in Florida (physicians, attorneys, architects, engineers), the entity must be a Professional LLC (PLLC) or Professional Association (PA). Separate holding LLC — owns investment real estate, equipment, or intellectual property that is leased back to the operating entity. This separation prevents a judgment against the operating business from reaching the holding company\'s assets. Neither entity replaces professional liability insurance — they are complementary layers.',
     defends:
-      'A properly maintained multi-member LLC limits the charging-order remedy as the exclusive remedy for outside creditors — meaning a creditor who wins a judgment against you personally cannot seize LLC assets.',
+      "A properly maintained multi-member LLC receives 'charging-order exclusivity' under Florida Statute §605.0503. This means a creditor who wins a judgment against you personally cannot seize the LLC's assets directly. Their only remedy is a 'charging order' — a court order directing the LLC to pay them if and when you choose to make distributions. If you never make distributions, the creditor receives nothing — and in some cases may owe phantom income tax on undistributed allocated income, further discouraging them from pursuing the claim. Source: Gassman & Markham (2025 ed.) Ch. 1, citing Fla. Stat. §605.0503(6).",
     failure:
-      'A single-member Florida LLC does not receive charging-order exclusivity. Per Olmstead v. FTC, 44 So. 3d 76 (Fla. 2010), a court may order the owner to surrender their entire membership interest. Fix: add a genuine second member.',
+      "Owning an LLC entirely by yourself — a single-member LLC. Under Florida Statute §605.0503(4), a charging order is NOT the sole and exclusive remedy for judgment creditors of a single-member LLC. The Florida Supreme Court confirmed in Olmstead v. FTC, 44 So. 3d 76 (2010) that a court may order the single-member LLC owner to surrender their entire membership interest to satisfy a judgment. Gassman & Markham state directly: 'Single-member LLC ownership offers no substantive protection from a charging order standpoint under Florida law.' The practical fix is straightforward: add a genuine second member. Some planners use a disregarded irrevocable trust as the second member so the LLC remains a disregarded entity for income tax purposes. The second most common failure: a professional LLC that the owner believes protects against malpractice claims. Under Florida Statute §621.07, a licensed professional remains personally liable for their own professional negligence regardless of the entity form. The entity does not eliminate malpractice exposure — only insurance does.",
     florida:
-      'Fla. Stat. §605.0503 provides charging-order exclusivity for multi-member LLCs. §621.07 preserves full personal malpractice liability regardless of entity form for licensed professionals.',
+      "Florida §605.0503 provides charging-order exclusivity for multi-member LLCs — and specifically, under §605.0503(6), prevents foreclosure on the LLC interest even when all members' interests are subject to charging orders. This was a significant improvement over the predecessor statute. Florida also maintains the Olmstead vulnerability for single-member LLCs, which means the single most important word in Florida entity planning is 'multi-member.' Source: Gassman & Markham (2025 ed.) Ch. 1.",
     calibration:
-      'Step five — relevant only when insurance, titling, estate documents, and trust funding are already in place. For most families, entity structure is not the priority. Start with the layers below.',
+      'Entity structure is Step 5 — appropriate only when insurance, titling, estate documents, and trust funding are already confirmed in place. For most Florida families without an operating business, this layer is not the priority. For business owners and real estate investors, it is essential — but it is not a substitute for insurance.',
     authority:
       'Fla. Stat. §605.0503 · §621.07 · Olmstead v. FTC (Fla. 2010)',
     profileNotes: {
@@ -260,15 +273,15 @@ const ARCHITECTURE_LAYERS = [
     name: 'Advanced Planning Layer',
     sublabel: 'Irrevocable Structures & Transfer Strategies',
     color: '#8B2020',
-    what: 'Spousal Lifetime Access Trust (SLAT), Grantor Retained Annuity Trust (GRAT), Charitable Remainder Trust (CRT), ILIT, family limited partnership, domestic asset protection trust in favorable jurisdictions.',
+    what: 'Spousal Lifetime Access Trust (SLAT) — an irrevocable trust funded by one spouse for the benefit of the other, removing assets from the taxable estate while allowing indirect access through the beneficiary spouse. Grantor Retained Annuity Trust (GRAT) — transfers future appreciation out of your estate by paying you an annuity stream, with the remainder passing to heirs estate-tax-free if the assets grow faster than the IRS hurdle rate. Irrevocable Life Insurance Trust (ILIT) — described in Layer 3 — keeps life insurance death benefits outside the taxable estate. Charitable Remainder Trust (CRT) and Donor-Advised Fund (DAF) — for clients with significant charitable intent, these structures provide income streams and income tax deductions while transferring assets efficiently. Dynasty trust in a favorable jurisdiction — for multi-generational wealth transfer. Note: Florida does NOT recognize self-settled domestic asset protection trusts (see Layer 3 for explanation).',
     defends:
-      'These structures remove assets from the taxable estate, protect from future creditors (third-party irrevocable trusts only), or shift appreciation out of the estate during lifetime. They are permanent once implemented.',
+      'These structures primarily address estate tax efficiency — removing assets from your taxable estate during life so that the federal estate tax (currently 40% above the applicable exclusion amount) does not apply to the transferred assets. They also provide long-term creditor protection for beneficiaries through spendthrift provisions in irrevocable trusts. For clients with taxable estates, the combination of lifetime gifting, GRAT strategies, and SLAT structures can permanently remove millions of dollars from estate tax exposure at relatively low gift-tax cost. Source: Pfau, Retirement Planning Guidebook (2021) Ch. 11 (estate planning tax strategies).',
     failure:
-      "Self-settled structures fail if created to hinder, delay, or defraud creditors. Florida's UVTA (Ch. 726) allows unwinding up to 4 years post-transfer. Timing and solvency at transfer are critical.",
+      "Implementing advanced structures before the foundation is in place — before the umbrella is sized correctly, before accounts are properly titled, before the revocable trust is funded. Advanced planning on an unstable foundation is a waste of legal fees and planning time. The second most common failure: self-settled structures that don't work in Florida. Any transfer of assets made with the intent to hinder, delay, or defraud creditors is a 'voidable transfer' under Florida's Uniform Voidable Transactions Act (Chapter 726), allowing creditors to unwind the transfer for up to four years (or one year from discovery, whichever is later). Source: Gassman & Markham (2025 ed.) Ch. 1, citing Fla. Stat. Ch. 726.",
     florida:
-      'Florida does not recognize self-settled DAPTs. Structures that work in Nevada, South Dakota, or Alaska do not provide the same protection for Florida residents with Florida assets and Florida creditors.',
+      "Florida has no state estate tax — this alone makes many structures that were designed to minimize state-level estate taxes unnecessary for Florida residents. Federal estate tax planning, however, remains relevant for estates that exceed the federal applicable exclusion amount. The TCJA provisions currently in effect are set to revert without Congressional action — meaning the exclusion could be significantly reduced. Pfau notes in the Retirement Planning Guidebook (2021): 'it is a common belief that tax rates are currently as low as they will ever be.' That sentiment applies to estate taxes as well.",
     calibration:
-      'Step six — appropriate only for individuals with fully funded foundational planning, taxable estates, or specific business succession needs. If layers 1–4 are not in place, advanced planning is premature — full stop.',
+      "Step 6. Appropriate for individuals with fully funded foundational planning, taxable estates, or specific business succession needs. If the word 'advanced' appeals to you because it sounds like the most protection — resist that instinct. A properly sized umbrella policy and correctly titled assets protect far more families far more effectively than a SLAT ever will. Source: the entire framework of this architecture, as confirmed by Gassman & Markham (2025 ed.).",
     authority:
       'Fla. Stat. Ch. 726 (UVTA) · IRC §§2036, 2038, 2042 · Fla. Stat. §736.0505 (spendthrift provisions)',
     profileNotes: {
@@ -286,7 +299,7 @@ const EXPOSURE_QUESTIONS = [
     text: 'Are you a physician, surgeon, dentist, attorney, contractor, real estate developer, or do you serve on a corporate or nonprofit board of directors?',
     riskLabel: 'High-Liability Profession',
     riskNote:
-      'Florida §621.07 preserves personal malpractice liability regardless of entity form. Professional liability exposure cannot be fully eliminated by any structure.',
+      "In Florida, licensed professionals — physicians, surgeons, dentists, attorneys, architects, engineers — practice under entities (PLLC or PA) that do not eliminate personal liability for their own professional negligence. Florida Statute §621.07 preserves full personal malpractice liability regardless of entity form. The entity protects you from business creditors. It does not protect you from your own professional errors. Professional liability insurance (with adequate limits and tail coverage) is the only layer that addresses this exposure directly. For board members: directors and officers face personal liability for certain corporate actions, which is why D&O insurance exists. Source: Gassman & Markham (2025 ed.) Ch. 1 · Fla. Stat. §621.07.",
     calibration: CALIBRATION_SYSTEM.INSURANCE,
     followUp:
       'Does your professional liability include tail coverage, and do you carry a personal umbrella policy of at least $2M?',
@@ -298,7 +311,7 @@ const EXPOSURE_QUESTIONS = [
     text: 'Do you own any LLC, company, or real estate investment by yourself, with no other owner or partner?',
     riskLabel: 'Single-Member LLC Exposure',
     riskNote:
-      'Under Olmstead v. FTC (Fla. 2010), Florida courts may order a single-member LLC owner to surrender their entire membership interest to satisfy a judgment. Multi-member LLCs receive stronger protection under §605.0503.',
+      "Under Florida Statute §605.0503(4), a charging order — the standard creditor remedy against an LLC owner's interest — is not the 'sole and exclusive remedy' for judgment creditors of a single-member LLC. In plain English: a creditor who wins a judgment against you personally may be able to ask a court to hand over your entire ownership interest in that single-member LLC. In a multi-member LLC, this is prevented under §605.0503(6) — the foreclosure remedy is simply not available. The Florida Supreme Court confirmed this distinction in Olmstead v. FTC (2010). Gassman & Markham state directly: 'Single-member LLC ownership offers no substantive protection from a charging order standpoint under Florida law.' The fix is adding a genuine second member. Source: Gassman & Markham (2025 ed.) Ch. 1.",
     calibration: CALIBRATION_SYSTEM.ENTITIES,
     followUp:
       'Is this primarily an operating business or a real estate holding? The appropriate structure differs.',
@@ -310,7 +323,7 @@ const EXPOSURE_QUESTIONS = [
     text: "Is your Florida primary residence titled in an LLC, in a trust created in another state, or in only one spouse's name when you are married?",
     riskLabel: 'Homestead Protection at Risk',
     riskNote:
-      "Florida's homestead exemption (Art. X §4) is unlimited — but disappears if property is titled to an LLC. An out-of-state trust may also fail Florida's homestead devise restrictions, jeopardizing the exemption and the property tax Save Our Homes cap.",
+      "Article X, Section 4 of the Florida Constitution provides unlimited creditor protection for your primary residence — there is no dollar cap. The Florida Supreme Court has described this as 'almost supernatural protection.' But this protection disappears entirely the moment the property is titled to an LLC. It is replaced by the LLC's charging-order protection, which is weaker and can be defeated by domestic creditors. The property tax Save Our Homes cap — which limits annual assessment increases to 3% for homesteaded property — is also lost. An out-of-state trust creates a different problem: Florida's homestead devise restrictions (Fla. Stat. §732.4015) restrict how you can leave the homestead to your heirs, and an out-of-state trust may not be drafted to comply with these rules. Note: a properly drafted Florida revocable trust does protect the homestead — Florida appellate courts have confirmed this repeatedly. Source: Gassman & Markham (2025 ed.) Ch. 5.",
     calibration: CALIBRATION_SYSTEM.TITLING,
     followUp:
       'When did a Florida-licensed estate attorney last review how your residence is titled?',
@@ -322,7 +335,7 @@ const EXPOSURE_QUESTIONS = [
     text: "If you are married, are your primary bank and brokerage accounts titled jointly with your spouse with the phrase 'tenants by the entireties' in the account agreement?",
     riskLabel: 'TBE Account Titling',
     riskNote:
-      'Under Beal Bank v. Almand (Fla. 2001), confirmed by Loumpos v. Bank One (Fla. Dec. 2025), married spouses may hold accounts as tenants by the entireties — providing protection from individual creditors of either spouse. Requires proper titling.',
+      "'Tenancy by the entireties' (TBE) is a form of joint ownership that Florida law makes available only to married couples. When a bank or brokerage account is properly titled as TBE, a judgment creditor of only one spouse cannot reach that account. The protection applies to individual creditors — it does not protect against joint debts that both spouses owe together. The Florida Supreme Court confirmed this protection for personal property accounts in Beal Bank, SSB v. Almand & Associates (2001), and the court extended it further in Loumpos v. Bank One (Fla. Dec. 2025). The critical point: TBE protection requires that the account agreement actually use the phrase 'tenants by the entireties' or its equivalent. Many joint accounts opened at brokerage firms default to 'joint tenants with right of survivorship' (JTWROS) — which is joint ownership but does NOT carry the same creditor protection. Source: Gassman & Markham (2025 ed.) Ch. 2.",
     calibration: CALIBRATION_SYSTEM.TITLING,
     followUp:
       'Have you confirmed this in writing with your financial institution?',
@@ -334,7 +347,7 @@ const EXPOSURE_QUESTIONS = [
     text: 'Has any beneficiary designation on a 401(k), IRA, life insurance policy, or annuity gone unchanged through a marriage, divorce, birth of a child, or death of a named beneficiary?',
     riskLabel: 'Beneficiary Designation Override',
     riskNote:
-      "Beneficiary designations supersede your will and your trust by contract. An unchanged designation after a life event may direct assets to an ex-spouse, a deceased parent, or 'my estate' — triggering probate and potentially distributing assets contrary to your intent.",
+      "This is one of the most consequential and most overlooked planning gaps in American estate planning. A beneficiary designation on a retirement account (IRA, 401k, 403b, pension), life insurance policy, or annuity is a legally binding contract that supersedes your will, your trust, and every other estate planning document you have ever signed. The U.S. Supreme Court confirmed this in Kennedy v. Plan Administrator for DuPont (2009).\n\nCommon disasters: a former spouse inheriting a $400,000 IRA because the designation was never updated after divorce. A deceased parent named as primary beneficiary, causing the account to flow to 'my estate' and go through probate. An adult child inheriting a large retirement account at peak earning years, forced by the 10-year rule under SECURE 2.0 (IRC §401(a)(9)(H)) to distribute the entire account within 10 years of the original owner's death — potentially all taxed at the 37% federal bracket.\n\nUnder current law, most non-spouse beneficiaries of inherited IRAs cannot stretch distributions over their lifetime. They must empty the account within 10 years. If the original owner died after their required beginning date, the beneficiary must also take annual distributions during the first nine years. Source: Choate, Estate Planning for Retirement Benefits (Sept 2025 outline), Part 3.",
     calibration: CALIBRATION_SYSTEM.TITLING,
     followUp:
       'Which accounts are affected, and when were they last formally reviewed?',
@@ -346,7 +359,7 @@ const EXPOSURE_QUESTIONS = [
     text: 'Do you carry a personal umbrella liability policy — and does it have limits of at least $1M for every $1M in your estimated net worth?',
     riskLabel: 'Insurance Layer Gap',
     riskNote:
-      'An umbrella policy is the first line of defense and the only layer that pays for legal defense costs before any other protection is tested. Without it, a single automobile accident or slip-and-fall can reach every other layer.',
+      "An umbrella liability policy is the first line of defense and the only layer that pays for your legal defense costs — attorney fees, expert witnesses, court costs, the cost of a defense — before any other protection is tested. Without it, a single automobile accident, slip-and-fall on your property, or social host liability claim can consume your savings, your investment accounts, and your business equity while your attorney fights in court.\n\nTwo sizing rules of thumb: (1) At minimum, $1M of umbrella coverage for every $1M in estimated net worth. (2) Your underlying auto liability policy must meet the umbrella's required minimum (typically 250/500/100). If your auto policy carries only 100/300, there is a coverage gap between where your auto ends and where your umbrella begins — in that gap, you pay personally.\n\nAnnual umbrella premiums for $2M–$5M in coverage typically cost $300–$600 per year — one of the most cost-effective risk management purchases available. Source: Gassman & Markham (2025 ed.) Ch. 1.",
     calibration: CALIBRATION_SYSTEM.INSURANCE,
     followUp:
       'Does your auto policy meet the underlying limit requirements of an umbrella (typically 250/500/100)?',
@@ -358,7 +371,7 @@ const EXPOSURE_QUESTIONS = [
     text: 'If you own a business with one or more partners, has your buy-sell agreement been reviewed by counsel since June 2024?',
     riskLabel: 'Buy-Sell Exposure Post-Connelly',
     riskNote:
-      "Connelly v. United States (2024) held 9-0 that life insurance proceeds used to fund a corporate stock redemption are includable in the corporation's estate tax value. Buy-sell agreements funded with entity-owned life insurance drafted before June 2024 may have significant unintended estate tax consequences.",
+      "In Connelly v. United States (144 S. Ct. 1406, June 2024), the U.S. Supreme Court held 9-0 that life insurance proceeds received by a corporation to fund a stock redemption must be included in calculating the corporation's fair market value for estate tax purposes — and are NOT offset by the redemption obligation. In plain English: if your business owns a life insurance policy on you and uses the proceeds to buy back your shares from your estate, the IRS now includes those insurance proceeds in the business's value. This can significantly increase the estate tax exposure for your heirs. Most entity-purchase buy-sell agreements (where the company owns the policy) drafted before June 2024 were structured assuming the offset — which the Supreme Court has now said is not available. Cross-purchase agreements (where the co-owners own policies on each other) are generally not affected, but create their own administrative challenges at scale. Any buy-sell with entity-owned insurance requires immediate review. Source: Gassman & Markham (2025 ed.) Ch. 1.",
     calibration: CALIBRATION_SYSTEM.ENTITIES,
     inverted: true,
     core: false,
@@ -369,7 +382,7 @@ const EXPOSURE_QUESTIONS = [
     text: 'If you have a revocable trust, have you confirmed in the past 24 months that every account, real estate parcel, and business interest you own is actually titled to the trust?',
     riskLabel: 'Unfunded Trust',
     riskNote:
-      'A signed revocable trust that does not own your assets controls nothing. Trust funding — re-titling accounts, real estate, and business interests to the trustee — is the step most often skipped and least often verified.',
+      "A revocable living trust only controls assets that are legally titled to it. Signing the trust document creates the legal structure. Funding the trust means actually re-titling your assets — changing the name on your brokerage account from 'John Smith' to 'John Smith, Trustee of the John Smith Revocable Trust dated January 1, 2024.' Re-deeding real estate. Assigning business interests. Changing the ownership on other accounts.\n\nUntil this re-titling happens, those assets go through Florida probate (Chapter 733 of the Florida Statutes) — a public court process — regardless of what your trust document says. The trust controls only what is in its name.\n\nThe most common scenario: a client signed a trust seven years ago, has opened three new brokerage accounts since then, and none of them are titled to the trust. The trust controls the old accounts. The new accounts go through public probate. Pfau notes in the Retirement Planning Guidebook that trust funding 'provides survivors with sufficient access while simplifying the probate process.' Source: Gassman & Markham (2025 ed.) Ch. 5 · Pfau, Retirement Planning Guidebook (2021) Ch. 11.",
     calibration: CALIBRATION_SYSTEM.FUNDING,
     inverted: true,
     core: false,
