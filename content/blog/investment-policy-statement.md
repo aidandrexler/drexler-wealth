@@ -1,0 +1,16 @@
+---
+title: The Document Most Investors Don't Have — But Should
+date: June 24, 2026
+description: An Investment Policy Statement is the written agreement between an investor and their adviser that governs how money is managed. Most individual investors have never seen one. It may be the most valuable financial document you don't have.
+readTime: 4 min read
+---
+
+Every institutional investor — every pension fund, university endowment, and foundation — operates under a written Investment Policy Statement (IPS). This document defines the investor's goals, time horizon, risk tolerance, asset allocation targets, and the rules that govern investment decisions. It is the governing document of the portfolio. Individual investors — with changing lives, families, taxes, and emotional responses to markets — almost never have one. This is backward. The Evensky, Horan and Robinson New Wealth Management framework (CFA Institute, 2011) treats the IPS as the foundational document of any wealth management engagement — the document that every other decision flows from.
+
+What belongs in an IPS: a description of your goals (retirement at what age, at what income level, with what probability of success), your time horizon (which is not a single number — most individuals have multiple simultaneous time horizons), your risk tolerance (the emotional capacity to withstand portfolio declines) versus your risk capacity (the financial ability to absorb losses without jeopardizing goals), your asset allocation targets and allowable ranges, your liquidity requirements, your tax considerations, and the rules for rebalancing and manager selection. Evensky describes the life balance sheet — accounting for not just your financial assets but your human capital (the present value of your future earnings), your implied liabilities (the present value of your retirement spending needs), and how these interact to determine what your portfolio should actually look like.
+
+The IPS is also the document that governs the relationship between you and your adviser. Rojeck notes that the financial planner's role is to help you see the big picture, help you identify your values and goals, and then work with you to identify and assemble the specific components to best achieve those values and goals. The IPS is where that clarity is documented — so that investment decisions are made against an agreed-upon framework rather than in response to market noise, media headlines, or the adviser's quarterly performance anxiety. An IPS with defined allocation targets and rebalancing rules means a severe market decline in early retirement triggers a rebalance and a draw from reserves — not a panic sale at the worst possible moment.
+
+Most individual investors have never had the conversation with their adviser that would produce an IPS. The conversation that produces an IPS — goals, fears, time horizons, what success looks like — is also the most valuable planning conversation you can have. Ask your adviser for one.
+
+This article is for educational purposes only and does not constitute investment advice. See Evensky, Horan & Robinson, *The New Wealth Management* (CFA Institute, 2011) and Hallman & Rosenbloom, *Private Wealth Management* (9th ed. 2014) Ch. 9.

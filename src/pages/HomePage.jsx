@@ -117,6 +117,16 @@ export default function HomePage() {
             Strategy was built to be the coordinator that most affluent families
             are missing.
           </p>
+          <p className="positioning__body">
+            The goal of this practice is what Hughes, Massenzio and Whitaker call
+            &apos;complete wealth&apos; — the integration of financial capital with
+            the human, intellectual, social, and spiritual capitals that determine
+            whether a family&apos;s wealth endures or dissipates across generations.
+            Financial capital is important. But it is the least durable of the five
+            forms of wealth. The families that flourish over generations are those
+            who understand this — and who find advisers willing to work on all five
+            dimensions simultaneously.
+          </p>
           <div className="positioning__stats">
             {STATS.map((stat) => (
               <div key={stat.label} className="positioning__stat">

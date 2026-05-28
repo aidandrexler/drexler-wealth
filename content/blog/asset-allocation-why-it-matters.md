@@ -1,0 +1,16 @@
+---
+title: Why Asset Allocation Explains 93% of Your Portfolio's Return
+date: July 1, 2026
+description: The decision about how to divide your portfolio among stocks, bonds, and other asset classes explains nearly all of your long-term investment outcome. The decision about which specific securities to own within those classes explains almost none of it.
+readTime: 4 min read
+---
+
+In 1986, Gary Brinson, Randolph Hood, and Gilbert Beebower published a study of ninety-one large pension funds that changed how the investment profession thinks about portfolio performance. Their finding: investment policy — the basic decision about how much to allocate to stocks, bonds, and cash — explained 93.6% of the variation in portfolio returns over time. Active management and market timing together explained the remaining 6.4%. Rojeck (*Wealth*, 2019) reproduces their table directly: security selection contributes two percent of portfolio performance. Market timing contributes five percent. Asset allocation policy contributes ninety-three percent.
+
+The practical implication is counterintuitive for most individual investors. The investment conversation most people have with their advisers — which stocks to buy, whether to get into or out of the market, what the Federal Reserve is going to do — concerns the seven percent of the outcome. The conversation that almost never happens — what is the right mix of assets for your specific situation, time horizon, risk tolerance, and financial goals — concerns the ninety-three percent. Evensky and Horan's wealth management framework places the asset allocation decision at the center of every client engagement for exactly this reason: get the allocation right and almost everything else takes care of itself over time. Get it wrong and no amount of security selection or market timing can compensate.
+
+The practical consequences of missing the market illustrate this vividly. Rojeck cites S&P 500 data showing that a fully invested portfolio from 1999 through 2018 returned 9.92% annually, growing $10,000 to $41,332. Missing just the ten best days reduced that return to 5.03% — $20,873. Missing the thirty best days produced a negative return. The critical insight: the best days in the market almost always occur during periods of maximum fear — the weeks immediately following a severe market decline. Investors who sold during the decline and waited for safety before buying back missed the recovery. The cost of this behavior is enormous and largely invisible.
+
+The right response is not to invest everything in stocks and ignore volatility. It is to build an allocation that matches your time horizon, your actual risk tolerance when markets fall sharply, and your financial goals — and then stay committed to that allocation across market cycles. This requires a written Investment Policy Statement, a financial plan that models your goals against your resources, and an adviser relationship built around long-term strategy rather than short-term performance.
+
+This article is for educational purposes only and does not constitute investment advice. See Rojeck, *Wealth* (2019) Ch. 7; Evensky et al., *The New Wealth Management* (CFA Institute, 2011); and Brinson, Hood & Beebower (1986).
