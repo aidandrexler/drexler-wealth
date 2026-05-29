@@ -36,7 +36,7 @@ const STATS = [
   },
   {
     label: 'THE MOST COMMON GAP',
-    text: '3 advisors. 0 conversations. The integration failure that most affluent families never see coming.',
+    text: 'Four advisors. Zero conversations. The most common planning configuration in South Florida.',
   },
   {
     label: 'FLORIDA IS DIFFERENT',
@@ -106,7 +106,7 @@ export default function HomePage() {
         <div className="container">
           <p className="eyebrow">The Quarterback Model</p>
           <h2 className="positioning__headline section-heading">
-            Most affluent families have three advisors.
+            Most affluent families work with three or four advisors.
             <br />
             Most advisory teams have never spoken to each other.
           </h2>

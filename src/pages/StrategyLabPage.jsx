@@ -24,6 +24,13 @@ const PROFESSIONALS = [
   { id: 'a', label: 'Estate Attorney', emoji: '⚖️', short: 'A' },
   { id: 'c', label: 'CPA', emoji: '📊', short: 'C' },
   { id: 'f', label: 'Financial Advisor', emoji: '📈', short: 'F' },
+  {
+    id: 'i',
+    label: 'Insurance Adviser',
+    emoji: '🛡️',
+    short: 'I',
+    sublabel: 'P&C, Umbrella & DI',
+  },
 ]
 
 const GAP_CARD_DATA = {
@@ -51,6 +58,18 @@ const GAP_CARD_DATA = {
       calibration: CALIBRATION_SYSTEM.TITLING,
     },
   ],
+  i_only: [
+    {
+      title: 'Coverage Without Coordination',
+      scenario:
+        "Your insurance adviser has reviewed your umbrella policy, your professional liability, and your property and casualty coverage. This is genuinely valuable — most families have never had this review done professionally. But insurance planning in isolation is incomplete. Your insurance adviser cannot see whether your umbrella limits are matched to your actual exposed net worth as reflected in your investment portfolio. They cannot see whether your life insurance policy is owned by an ILIT or is sitting inside your taxable estate. They cannot see whether your professional liability policy covers the specific risks your attorney has identified in your business structure. Insurance planning without financial and legal coordination is coverage without context.",
+      authority:
+        'Hallman & Rosenbloom, Private Wealth Management (9th ed. 2014) Ch. 20 · Rojeck, Wealth (2019) Ch. 5',
+      question:
+        'Does your insurance adviser know your current net worth, the details of your business entity structure, and whether any of your life insurance is held in an irrevocable trust?',
+      calibration: CALIBRATION_SYSTEM.INSURANCE,
+    },
+  ],
   a_only: [
     {
       title: 'Trust Without Funding',
@@ -61,6 +80,16 @@ const GAP_CARD_DATA = {
       question:
         'Has every brokerage account, bank account, and real estate parcel you own been re-titled to reflect your revocable trust as the legal owner — not just listed in an appendix to the trust document?',
       calibration: CALIBRATION_SYSTEM.FUNDING,
+    },
+    {
+      title: 'The Guardianship Gap',
+      scenario:
+        "Your estate attorney has drafted a revocable trust that governs the distribution of your estate at death. But there is a set of documents that governs what happens before death — during any period when you are alive but unable to manage your own affairs. A durable financial power of attorney names someone who can access your accounts and manage your finances during incapacity. A healthcare surrogate designation names someone who can make medical decisions for you. A living will documents your end-of-life care preferences. Without these documents, incapacity triggers a guardianship proceeding — a public, court-supervised process that can cost tens of thousands of dollars and takes weeks or months to establish. Most estate attorneys draft these documents as part of a complete estate plan. If yours did not, or if yours are more than five years old, schedule a review. The revocable trust alone is not a complete incapacity plan.",
+      authority:
+        'Fla. Stat. §765.202 · §709.2104 · Pfau, Retirement Planning Guidebook (2021) Ch. 11 · Hallman & Rosenbloom (9th ed. 2014)',
+      question:
+        'Were a durable financial power of attorney, healthcare surrogate designation, and living will drafted at the same time as your revocable trust — and have all of them been reviewed since your Florida residency was established?',
+      calibration: CALIBRATION_SYSTEM.DOCUMENTS,
     },
   ],
   c_only: [
@@ -162,9 +191,93 @@ const GAP_CARD_DATA = {
       calibration: CALIBRATION_SYSTEM.DOCUMENTS,
     },
   ],
+  fi: [
+    {
+      title: 'The Investment-and-Insurance Silo',
+      scenario:
+        "You have your financial adviser managing your portfolio and your insurance adviser reviewing your coverage. This is the most common two-adviser combination in affluent Florida families — and it addresses approximately half of the planning picture. What is missing: legal structure and tax strategy. Without an estate attorney, your accounts have no governing document for what happens at your death or incapacity. Without a CPA coordinating with both advisers, your Roth conversion strategy may be triggering IRMAA surcharges, and your insurance proceeds may be sitting in a taxable estate rather than an ILIT because nobody completed the legal work to move them out. Evensky and Horan describe this as the life balance sheet gap — the adviser managing assets without visibility into the legal claims against them.",
+      authority:
+        'Evensky, Horan & Robinson, The New Wealth Management (CFA Institute, 2011) Ch. 1 (life balance sheet) · Rojeck, Wealth (2019) Ch. 9 (the financial planner as quarterback)',
+      question:
+        'Does either your financial adviser or your insurance adviser know the current provisions of your estate plan — specifically who inherits your accounts and whether your life insurance death benefit is inside or outside your taxable estate?',
+      calibration: CALIBRATION_SYSTEM.DOCUMENTS,
+    },
+  ],
+  ai: [
+    {
+      title: 'Structure Without Strategy',
+      scenario:
+        "Your estate attorney has drafted your documents and your insurance adviser has reviewed your coverage. Between them, you have legal protection and the first layer of financial defense. What is absent: the ongoing investment management, the tax optimization, and the retirement income planning that keep the legal structure relevant as your financial situation evolves. An ILIT created five years ago with a $2M death benefit may be dramatically undersized if your net worth has grown substantially since. A trust structure that was optimal for your estate at $3M may need revision at $8M. Without a financial adviser modeling your portfolio and a CPA modeling your taxes, the legal structure is a snapshot of your situation as it was, not as it is.",
+      authority:
+        'Hallman & Rosenbloom, Private Wealth Management (9th ed. 2014) Ch. 1 (the financial planning process as ongoing)',
+      question:
+        'When did your estate attorney last receive a current financial statement showing your complete asset picture — so they can confirm the legal structure still reflects your actual situation?',
+      calibration: CALIBRATION_SYSTEM.DOCUMENTS,
+    },
+  ],
+  ci: [
+    {
+      title: 'Taxes and Coverage Without a Plan',
+      scenario:
+        "Your CPA manages your tax obligations and your insurance adviser covers your exposures. Both are doing important work. But neither professional holds the legal architecture that governs what happens to your wealth when you are no longer able to manage it — or after you are gone. There is no trust directing the distribution of your estate. There is no durable power of attorney naming someone to manage your finances if you are incapacitated. The insurance proceeds from the policy your insurance adviser placed will go directly to the named beneficiary — which may or may not align with your estate plan, because there is no estate plan.",
+      authority: 'Pfau, Retirement Planning Guidebook (2021) Ch. 11 (components of an estate plan)',
+      question:
+        'Do you have a current will or revocable trust, a durable financial power of attorney, and a healthcare surrogate designation — all executed under Florida law?',
+      calibration: CALIBRATION_SYSTEM.DOCUMENTS,
+    },
+  ],
+  aci: [
+    {
+      title: 'No Investment Governance',
+      scenario:
+        "You have legal structure, tax coordination, and insurance coverage — three of the four dimensions of a comprehensive wealth plan. The missing dimension is investment governance: the ongoing management of your portfolio against a written strategy, the modeling of withdrawal sequencing in retirement, the asset location decisions that determine which assets sit in taxable versus tax-deferred accounts. Without a financial adviser, these decisions are being made informally — or not at all. Evensky and his co-authors at the CFA Institute describe the Investment Policy Statement as the foundational document of wealth management — the written agreement that defines your goals, risk tolerance, asset allocation, and the rules governing every investment decision. Without one, your largest financial asset has no governing document.",
+      authority:
+        'Evensky, Horan & Robinson, The New Wealth Management (CFA Institute, 2011) — the Investment Policy Statement as governing document · Hallman & Rosenbloom, Private Wealth Management (9th ed. 2014) Ch. 9',
+      question:
+        'Does a written Investment Policy Statement exist that defines your asset allocation targets, your risk tolerance, and the rules that govern how your investments are managed?',
+      calibration: CALIBRATION_SYSTEM.DOCUMENTS,
+    },
+  ],
+  afi: [
+    {
+      title: 'The Tax Blind Spot',
+      scenario:
+        "You have legal structure, insurance coverage, and investment management. This is a more complete team than most affluent families assemble. The missing professional — the CPA — is also the least visible gap, because the damage it creates shows up years later and is difficult to trace back to the absence. The Roth conversion your financial adviser executed increased your MAGI, which will push your Medicare premiums higher in two years — the CPA would have caught this. The appreciated stock you plan to donate to charity could be donated directly from your brokerage account with no capital gains tax — the CPA would have modeled this. The step-up in basis at death means some assets should be held until death rather than gifted during life — the CPA would have identified which ones. Pfau describes these as the three tax torpedo risks: Social Security provisional income effects, IRMAA Medicare premium surcharges, and bracket stacking from simultaneous income events. All three require CPA coordination to navigate.",
+      authority:
+        'Pfau, Retirement Planning Guidebook (2021) Ch. 10 (the Social Security tax torpedo, IRMAA, strategic Roth conversions)',
+      question:
+        'Does your CPA receive a copy of your investment account statements and review them before filing your return — or do they only see what you provide them in a document upload at tax time?',
+      calibration: CALIBRATION_SYSTEM.DOCUMENTS,
+    },
+  ],
+  cfi: [
+    {
+      title: 'The Legal Foundation Is Missing',
+      scenario:
+        "Your CPA, insurance adviser, and financial adviser form a productive team around your financial life. They optimize your taxes, protect your exposures, and manage your portfolio. What they cannot do — because none of them are licensed to practice law — is draft the legal documents that govern what happens to everything you have built. Without an estate attorney: your brokerage accounts have no legal direction at death and pass through Florida's public probate process. Your incapacity is managed by whoever a court appoints, not by the person you trust. Your homestead's constitutional protection may be jeopardized if the property is titled incorrectly. Your retirement accounts' beneficiary designations — which supersede every other document — may not have been reviewed since you were 35. The legal layer is not the most expensive layer to add. It is the layer whose absence costs the most.",
+      authority:
+        'Gassman & Markham (2025 ed.) Ch. 5 · Fla. Stat. §732.102 (intestate succession) · Fla. Stat. §765.202 (healthcare surrogate)',
+      question:
+        'If you became incapacitated tomorrow, who has the legal authority to access your bank accounts, manage your investments, and make healthcare decisions for you — and is that authority documented in a signed Florida legal document?',
+      calibration: CALIBRATION_SYSTEM.DOCUMENTS,
+    },
+  ],
+  acfi: [
+    {
+      title: 'The Complete Team — One Gap Remains',
+      scenario:
+        "You have assembled all four professionals. This is rare. Most affluent families in Palm Beach County have two or three, rarely four, and almost never all four working in coordination rather than in parallel. At this level, the gap is not a missing professional. It is the absence of someone who is accountable for the integrated picture — someone who knows what each professional is doing, who identifies the gaps between them, and who initiates the annual coordination conversation that most advisory teams never have. Rojeck calls this the quarterback role. Hallman and Rosenbloom describe it as the core function of private wealth management: not the management of any single domain, but the development of a comprehensive plan across all domains simultaneously. Most clients are their own quarterback by default. Most are not equipped for the role.",
+      authority:
+        'Rojeck, Wealth (2019) Ch. 9 (the financial planner as quarterback of the advisory team) · Hallman & Rosenbloom, Private Wealth Management (9th ed. 2014) Ch. 1 (the nature of private wealth management)',
+      question:
+        'Among your four advisers, who is explicitly responsible for identifying the gaps between them — and when did that person last do a review of the complete picture with all four professionals in the same conversation?',
+      calibration: CALIBRATION_SYSTEM.DOCUMENTS,
+    },
+  ],
 }
 
 const ARCHITECTURE_PROFILES = [
+  'Young Professional',
   'Business Owner',
   'Professional Practice',
   'Real Estate Investor',
@@ -188,6 +301,8 @@ const ARCHITECTURE_LAYERS = [
       "This is Step 1 for a reason. Before your attorney discusses LLCs. Before your adviser discusses trusts. Before anyone discusses advanced structures. The right umbrella policy, properly sized and properly linked to underlying coverage, is more valuable than almost any other protective structure you could put in place — because it prevents the creditor from reaching your protected layers entirely. Call your property and casualty agent this week. Ask two questions: (1) What are my current umbrella limits? (2) Do my underlying auto and homeowner's limits meet my umbrella's requirements?",
     authority: 'Gassman & Markham (2025 ed.) Ch. 1, Ch. 7 (disability insurance)',
     profileNotes: {
+      'Young Professional':
+        'At this stage, insurance is the entire asset protection plan. Own-occupation disability income, personal umbrella, and professional liability with tail coverage are non-negotiable for licensed professionals. Human capital is your largest asset — protect it first. Source: Evensky et al., The New Wealth Management (2011).',
       'Business Owner':
         'Commercial GL + business umbrella + key-man life on principals.',
       'Professional Practice':
@@ -217,16 +332,20 @@ const ARCHITECTURE_LAYERS = [
       'Fla. Const. Art. X §4 · Fla. Stat. §§222.11, 222.14, 222.21 · Beal Bank v. Almand (Fla. 2001) · Gassman & Markham (2025 ed.) Ch. 2, 3, 4, 5, 6, 8',
     profileNotes: {
       all: 'Check: Is your primary residence titled in your individual name or jointly as TBE? Not in an LLC or out-of-state trust?',
+      'Young Professional':
+        'Your primary residence in Florida receives unlimited creditor protection under Article X §4 if titled correctly (individually or in a revocable trust, not in an LLC). If married, title joint accounts as tenancy by the entireties. IRAs and 401(k)s are protected without limit under Fla. Stat. §222.21 — automatic if titling is correct.',
     },
+    retirementArchitecture:
+      "Retirement accounts — IRAs, 401(k)s, 403(b)s — receive unlimited creditor protection under Florida Statute §222.21. This is the asset protection dimension. But retirement assets also require their own planning architecture for how they are drawn down, when they are converted, and who inherits them.\n\nThe 10-year rule under SECURE 2.0 (IRC §401(a)(9)(H)) requires most non-spouse beneficiaries to fully distribute an inherited IRA within 10 years of the original owner's death. For an adult child inheriting a large IRA during peak earning years, the forced distributions can be taxed at the highest federal brackets. The planning response — Roth conversions during low-income years, strategic beneficiary designation review, coordination between financial adviser and estate attorney on trust-as-beneficiary structures — requires all three professionals to be working from the same picture simultaneously.\n\nSocial Security, though not a retirement account, is the most significant source of retirement income for most households. Pfau describes it as 'the best annuity money can buy' — government-backed, inflation-adjusted, with a survivor benefit. The decision of when to claim it is one of the highest-return planning decisions available. Delaying to age 70 for the higher earner in a couple can increase lifetime benefits by 76% or more compared to claiming at 62.\n\nSource: Choate, Estate Planning for Retirement Benefits (Sept 2025 outline) · Pfau, Retirement Planning Guidebook (2021) Chs. 4, 6, 11.",
   },
   {
     id: 'layer3',
-    name: 'Trust Layer',
-    sublabel: 'Probate Avoidance, Incapacity Governance & Transfer Architecture',
+    name: 'Trust & Estate Documents',
+    sublabel: 'Probate Avoidance & Transfer Architecture',
     color: '#3A3010',
-    what: 'Revocable living trust — provides probate avoidance, incapacity planning, and privacy in distribution. Does NOT provide creditor protection during your lifetime (you can revoke it; creditors can reach it). Pour-over will — a backup document that directs any assets not titled to the trust at your death to flow into it, catching anything that was missed. Durable financial power of attorney — names someone to manage your finances if you are incapacitated. Without one, your family may need a court-supervised guardianship proceeding. Healthcare surrogate designation (Fla. Stat. §765.202) — names someone to make medical decisions. Living will — your documented end-of-life care wishes. Irrevocable Life Insurance Trust (ILIT) — if you own significant life insurance, an ILIT keeps the death benefit outside of your taxable estate (preventing IRC §2042 inclusion) and, if properly drafted with a spendthrift provision, protects the death benefit from the beneficiaries\' creditors.\n\nNote on family governance documents: for families with significant wealth and multiple generations involved, the trust layer often extends beyond legal documents to include what Hughes, Massenzio and Whitaker call the governance infrastructure of a family enterprise — family mission statements, family councils, and family meeting frameworks that ensure qualitative capital (relationships, values, shared purpose) is preserved alongside financial capital. These are not legal documents drafted by attorneys; they are planning conversations facilitated by advisers who understand both the legal and the human dimensions of family wealth. For most families at the $1M–$5M level, this is aspirational. For families above $5M with multiple generations involved, it is the difference between wealth that endures and wealth that dissipates in three generations.\nSource: Hughes, Massenzio & Whitaker, Complete Family Wealth (2nd ed. 2022) Chs. 17–20.',
+    what: 'Revocable living trust — provides probate avoidance and privacy in distribution. Does NOT provide creditor protection during your lifetime (you can revoke it; creditors can reach it). Pour-over will — a backup document that directs any assets not titled to the trust at your death to flow into it, catching anything that was missed. Irrevocable Life Insurance Trust (ILIT) — if you own significant life insurance, an ILIT keeps the death benefit outside of your taxable estate (preventing IRC §2042 inclusion) and, if properly drafted with a spendthrift provision, protects the death benefit from the beneficiaries\' creditors.\n\nNote on family governance documents: for families with significant wealth and multiple generations involved, the trust layer often extends beyond legal documents to include what Hughes, Massenzio and Whitaker call the governance infrastructure of a family enterprise — family mission statements, family councils, and family meeting frameworks that ensure qualitative capital (relationships, values, shared purpose) is preserved alongside financial capital. These are not legal documents drafted by attorneys; they are planning conversations facilitated by advisers who understand both the legal and the human dimensions of family wealth. For most families at the $1M–$5M level, this is aspirational. For families above $5M with multiple generations involved, it is the difference between wealth that endures and wealth that dissipates in three generations.\nSource: Hughes, Massenzio & Whitaker, Complete Family Wealth (2nd ed. 2022) Chs. 17–20.',
     defends:
-      'The revocable trust serves two functions: it controls the distribution of your estate without the public probate court process, and it provides a governance structure during incapacity — so someone you trust can manage your finances without a judge\'s involvement. The ILIT serves a different function: it keeps your life insurance death benefit outside your taxable estate. A $3M policy owned personally adds $3M to your taxable estate; owned by an ILIT, the death benefit passes to your beneficiaries outside the estate entirely. For those approaching federal estate tax exposure, this distinction can materially reduce estate taxes. Source: Pfau, Retirement Planning Guidebook (2021) Ch. 11.',
+      'The revocable trust controls the distribution of your estate without the public probate court process. Incapacity governance during your lifetime belongs in the Incapacity & Access Layer — durable POA, healthcare surrogate, and living will are separate documents, not trust documents. The ILIT serves a different function: it keeps your life insurance death benefit outside your taxable estate. A $3M policy owned personally adds $3M to your taxable estate; owned by an ILIT, the death benefit passes to your beneficiaries outside the estate entirely. For those approaching federal estate tax exposure, this distinction can materially reduce estate taxes. Source: Pfau, Retirement Planning Guidebook (2021) Ch. 11.',
     failure:
       "A signed trust that has never been funded. Funding means actually re-titling your assets — changing the name on your brokerage account, re-deeding real estate, assigning business interests — so the trust legally owns them. Without this step, those assets go through probate (a public Florida court process under Chapter 733 of the Florida Statutes) regardless of what your trust document says. The second most common failure: an ILIT where the annual Crummey notices were never sent. Each year that a premium is transferred to the ILIT without a proper Crummey notice, the IRS may treat that transfer as using lifetime gift-tax exemption rather than the $18,000 annual exclusion. Over 15 years of premiums, this can consume hundreds of thousands of dollars of exemption that the family did not intend to use. Source: Gassman & Markham (2025 ed.) Ch. 5 · IRC §2503(b).",
     florida:
@@ -236,10 +355,36 @@ const ARCHITECTURE_LAYERS = [
     authority:
       'Fla. Stat. Ch. 736 (Trust Code) · Ch. 733 (Probate) · §765.202 · IRC §2042 (ILIT estate inclusion rule)',
     profileNotes: {
+      'Young Professional':
+        'A revocable trust is not urgent for most young professionals unless you own real estate or want to avoid probate. What IS urgent: a simple will, durable financial POA, and healthcare surrogate — a few hundred dollars. Get these before any other planning discussion.',
       'HNW Family':
         'If you have an ILIT: confirm Crummey notices were sent within 30 days of each premium payment. This is the most commonly overlooked compliance item in irrevocable trust administration.',
       'Business Owner':
         'If you have an ILIT: confirm Crummey notices were sent within 30 days of each premium payment. This is the most commonly overlooked compliance item in irrevocable trust administration.',
+    },
+  },
+  {
+    id: 'layer_incapacity',
+    name: 'Incapacity & Access Layer',
+    sublabel: 'Documents That Work While You Are Alive',
+    color: '#4A3A10',
+    what: "Durable Financial Power of Attorney — a legal document naming a person (your 'agent') who has the authority to manage your financial affairs if you become incapacitated: access your bank and brokerage accounts, pay your bills, file your tax returns, and make financial decisions on your behalf. 'Durable' means it survives your incapacity — a non-durable power of attorney becomes void precisely when you need it most. Healthcare Surrogate Designation (Fla. Stat. §765.202) — names the person who makes medical decisions for you when you cannot make them yourself: consenting to or refusing treatment, communicating with physicians, and directing your care. Living Will — your documented instructions about end-of-life care, including whether you want life-prolonging procedures if there is no reasonable expectation of recovery. HIPAA Authorization — allows your designated individuals to receive your medical information from healthcare providers. Without this, your spouse may be unable to speak with your physician.",
+    defends:
+      "Incapacity without these documents does not mean your family takes over. It means a court takes over. In Florida, if you become incapacitated without a durable power of attorney, your family must petition a court for a guardianship proceeding — a public, expensive, time-consuming process in which a judge determines who controls your finances and your healthcare. The guardianship becomes public record. It requires ongoing court supervision. It takes weeks or months to establish during exactly the period when your family needs immediate access to funds to pay for your care. A durable POA and healthcare surrogate prevent guardianship entirely. They cost a few hundred dollars to have an attorney draft. The absence of them can cost tens of thousands of dollars and months of family stress to remedy through the court system.\nSource: Pfau, Retirement Planning Guidebook (2021) Ch. 11.",
+    failure:
+      "The most common failure is having these documents but having them in a form that is rejected. A durable POA drafted in another state may not be accepted by Florida financial institutions. A healthcare surrogate designation that is more than a few years old may not reflect your current wishes or your current choice of surrogate. A HIPAA authorization that only names one person may fail to cover the right person at the critical moment. The second most common failure is having a revocable trust but not updating the durable POA to reflect the trust's existence — meaning the agent under the POA may not have authority to act as trustee. All four documents should be reviewed together by a Florida-licensed attorney.",
+    florida:
+      "Florida Statute §765.202 governs healthcare surrogate designations. Florida Statute §709.2104 governs durable powers of attorney. Florida Statute §765.101 defines the conditions under which a healthcare surrogate's authority becomes operative. Florida law requires the durable POA to be signed before two witnesses and a notary. Financial institutions in Florida are generally not required to accept a POA that does not substantially comply with the Florida Power of Attorney Act (Ch. 709). A New York or New Jersey POA may be rejected by a Florida bank. Source: Gassman & Markham (2025 ed.) Ch. 5.",
+    calibration:
+      "This layer is urgent for every adult — not just those with significant assets. A 30-year-old physician with no estate plan, no trust, and no retirement savings still needs a durable POA and healthcare surrogate. The cost of these documents is measured in hundreds of dollars. The cost of not having them during an unexpected medical crisis is measured in family anguish and legal fees. If you have these documents, review them every five years or after any significant life change.",
+    authority:
+      'Fla. Stat. §765.202 (Healthcare Surrogate) · Fla. Stat. §709.2104 (Durable Power of Attorney) · Fla. Stat. §765.101 · Pfau, Retirement Planning Guidebook (2021) Ch. 11 · Hallman & Rosenbloom, Private Wealth Management (9th ed. 2014)',
+    profileNotes: {
+      all: 'These documents apply universally. A physician facing a malpractice judgment is not more likely to become incapacitated than anyone else — but the cost of guardianship is equally unacceptable for every family. Every profile at every wealth level needs all four documents.',
+      'Young Professional':
+        'This is the most important layer for young professionals and the most commonly skipped. You are more likely to be incapacitated by an accident, illness, or surgery in your 30s than you are to die. A durable POA and healthcare surrogate cost less than one hour of your professional billing rate to have drafted.',
+      'Business Owner':
+        'Your durable POA agent needs explicit authority to act on behalf of the business — the generic form may not cover this. Ask your business attorney to review whether your POA grants sufficient business management authority.',
     },
   },
   {
@@ -260,12 +405,16 @@ const ARCHITECTURE_LAYERS = [
     authority:
       'Fla. Stat. §605.0503 · §621.07 · Olmstead v. FTC (Fla. 2010)',
     profileNotes: {
+      'Young Professional':
+        'Entity structure is almost never the right priority at this stage. If you are starting a practice or business, a properly maintained multi-member LLC or PLLC provides liability segregation — but insurance comes first, and the entity does not replace insurance.',
       'Business Owner':
         'Multi-member operating LLC + separate holding LLC. Single-member LLCs do not receive FL charging-order exclusivity per Olmstead.',
       'Professional Practice':
         'PLLC or PA for the practice. Holding LLC for equipment owned separately and leased to the practice entity.',
       'Real Estate Investor':
         'Separate multi-member LLC per property or cluster, owned by common holding company. Eliminates cross-contamination of liability between properties.',
+      'HNW Family':
+        'HNW families without operating businesses still often benefit from entity structures for investment assets — particularly real estate, family investment accounts, or discounted transfers to heirs via a family LLC. Source: Hallman & Rosenbloom (9th ed. 2014) Ch. 27.',
     },
   },
   {
@@ -285,10 +434,14 @@ const ARCHITECTURE_LAYERS = [
     authority:
       'Fla. Stat. Ch. 726 (UVTA) · IRC §§2036, 2038, 2042 · Fla. Stat. §736.0505 (spendthrift provisions)',
     profileNotes: {
+      'Young Professional':
+        'Advanced planning is not relevant at this stage. Start with insurance, titling, and basic estate documents — discussing GRATs and SLATs before confirming umbrella sizing and beneficiary designations wastes time and legal fees.',
       'HNW Family':
         'SLAT or third-party spendthrift trust for next-generation creditor protection. ILIT for life insurance death benefit outside the taxable estate.',
       'Business Owner':
         'Buy-sell reviewed post-Connelly (2024). Business succession plan with insurance-funded mechanism.',
+      'Real Estate Investor':
+        'Real estate investors frequently benefit from charitable planning structures — CRTs and 1031-to-GRAT sequences — that allow appreciated real estate to be sold without immediate capital gains recognition. A donor-advised fund can absorb gain from a property sale if timed with a charitable deduction. Requires attorney, CPA, and financial adviser coordination. Source: Rojeck, Wealth (2019) Ch. 2 · Hallman & Rosenbloom (9th ed. 2014) Ch. 27.',
     },
   },
 ]
@@ -378,6 +531,19 @@ const EXPOSURE_QUESTIONS = [
     conditionalOn: (answers) => answers.prof === 'yes' || answers.smllc === 'yes',
   },
   {
+    id: 'disability_income',
+    text: 'Do you own an individual own-occupation disability income policy — not just group coverage through your employer or professional association?',
+    riskLabel: 'Human Capital Unprotected',
+    riskNote:
+      "Your ability to earn income is almost certainly the largest asset on your personal balance sheet — particularly early in your career. Evensky and Horan, in The New Wealth Management (CFA Institute, 2011), describe human capital as the present value of all future earnings from employment, and identify it as typically the dominant asset for working professionals. A 35-year-old physician earning $500,000 per year with 30 years remaining has over $15 million in human capital. An own-occupation disability income policy protects that asset.\n\nGroup disability coverage through an employer or professional association typically covers only 60% of base salary up to a monthly cap, excludes bonus and partnership distributions, is taxable as ordinary income when employer-paid, and terminates when you leave the employer. Individual own-occupation policies — purchased directly from a carrier and owned by you — are portable, non-cancellable, and can be structured to cover your total compensation including variable income.\n\nThe critical feature is the definition of disability. An 'own-occupation' definition pays benefits if you cannot perform the specific duties of your own occupation — even if you could theoretically work in another field. An 'any-occupation' definition pays only if you cannot work in any gainful employment. A surgeon who loses fine motor function receives benefits under own-occupation and potentially nothing under any-occupation.\n\nSource: Hallman & Rosenbloom, Private Wealth Management (9th ed. 2014) Ch. 22, 30 · Evensky et al., The New Wealth Management (CFA Institute, 2011) Ch. 1 (human capital as the dominant asset).",
+    calibration: CALIBRATION_SYSTEM.INSURANCE,
+    followUp:
+      'Does your current group disability coverage follow you if you change employers — and have you confirmed whether it uses an own-occupation or any-occupation definition of disability?',
+    inverted: true,
+    core: false,
+    conditionalOn: (answers) => answers.prof === 'yes',
+  },
+  {
     id: 'trustfunding',
     text: 'If you have a revocable trust, have you confirmed in the past 24 months that every account, real estate parcel, and business interest you own is actually titled to the trust?',
     riskLabel: 'Unfunded Trust',
@@ -387,6 +553,20 @@ const EXPOSURE_QUESTIONS = [
     inverted: true,
     core: false,
     conditionalOn: (answers) => Boolean(answers.beneficiary),
+  },
+  {
+    id: 'investment_governance',
+    text: 'Has your financial adviser provided you with a written Investment Policy Statement — a document that defines your financial goals, your asset allocation targets, and the rules governing how your portfolio is managed?',
+    riskLabel: 'No Investment Governance Document',
+    riskNote:
+      "An Investment Policy Statement (IPS) is the governing document of your portfolio — the written agreement between you and your adviser that defines what you are trying to accomplish financially, how your assets should be allocated to achieve it, what level of risk is appropriate, and the rules that govern every investment decision. Every pension fund, university endowment, and institutional investor operates under an IPS. Most individual investors — including most high-net-worth families — have never seen one.\n\nEvensky, Horan and Robinson, in The New Wealth Management (CFA Institute, 2011), identify the IPS as the foundational document of every wealth management engagement — 'the document that all other decisions flow from.' Without one, your adviser is managing your portfolio against an unstated and possibly inconsistent set of objectives. Without one, when a market decline of 30% occurs, there is no document establishing that you agreed to accept equity volatility in exchange for long-term growth — and no document protecting you from an emotional decision to sell at the worst moment.\n\nThe IPS also documents the life balance sheet framework: not just your financial assets but the complete picture of your human capital (present value of future earnings), your financial capital, and your implied liabilities (present value of retirement spending needs and other obligations). Without this complete picture, your portfolio allocation may be systematically wrong for your actual financial situation.\n\nSource: Evensky, Horan & Robinson, The New Wealth Management (CFA Institute, 2011) Ch. 4, 13 · Hallman & Rosenbloom, Private Wealth Management (9th ed. 2014) Ch. 9.",
+    calibration: CALIBRATION_SYSTEM.DOCUMENTS,
+    followUp:
+      'Have you had a comprehensive conversation with your financial adviser about your goals, your fears, your time horizon, and what a successful financial life looks like to you — and has that conversation produced any written document?',
+    inverted: true,
+    core: false,
+    conditionalOn: (answers) =>
+      Boolean(answers.smllc) || Boolean(answers.umbrella),
   },
 ]
 
@@ -427,6 +607,7 @@ function getGapKey(selection) {
   if (sorted === 'a') return 'a_only'
   if (sorted === 'c') return 'c_only'
   if (sorted === 'f') return 'f_only'
+  if (sorted === 'i') return 'i_only'
   return sorted
 }
 
@@ -470,45 +651,63 @@ function CoordinationGapTool() {
             >
               <span>{pro.emoji}</span>
               <span>{pro.label}</span>
+              {pro.sublabel ? (
+                <span className="strategy-lab__circle-sublabel">{pro.sublabel}</span>
+              ) : null}
             </button>
           )
         })}
       </div>
 
       <div className="strategy-lab__venn-wrap" aria-hidden="true">
-        <svg width="260" height="120" viewBox="0 0 260 120">
+        <svg width="280" height="180" viewBox="0 0 280 180">
           <circle
-            cx="80"
-            cy="60"
-            r="45"
-            fill={selected.includes('a') ? '#B08D4C33' : 'transparent'}
+            cx="90"
+            cy="58"
+            r="42"
+            fill={selected.includes('a') ? '#B08D4C4D' : '#B08D4C26'}
             stroke="#B08D4C"
             strokeWidth="1.5"
+            strokeOpacity={selected.includes('a') ? 1 : 0.3}
           />
           <circle
-            cx="130"
-            cy="60"
-            r="45"
-            fill={selected.includes('c') ? '#C9A96E30' : 'transparent'}
+            cx="190"
+            cy="58"
+            r="42"
+            fill={selected.includes('c') ? '#C9A96E4D' : '#C9A96E26'}
             stroke="#C9A96E"
             strokeWidth="1.5"
+            strokeOpacity={selected.includes('c') ? 1 : 0.3}
           />
           <circle
-            cx="180"
-            cy="60"
-            r="45"
-            fill={selected.includes('f') ? '#8A9BB033' : 'transparent'}
+            cx="90"
+            cy="122"
+            r="42"
+            fill={selected.includes('f') ? '#8A9BB04D' : '#8A9BB026'}
             stroke="#8A9BB0"
             strokeWidth="1.5"
+            strokeOpacity={selected.includes('f') ? 1 : 0.3}
           />
-          <text x="58" y="64" className="strategy-lab__venn-letter">
+          <circle
+            cx="190"
+            cy="122"
+            r="42"
+            fill={selected.includes('i') ? '#8A9BB04D' : '#8A9BB026'}
+            stroke="#8A9BB0"
+            strokeWidth="1.5"
+            strokeOpacity={selected.includes('i') ? 1 : 0.3}
+          />
+          <text x="78" y="62" className="strategy-lab__venn-letter">
             A
           </text>
-          <text x="128" y="64" className="strategy-lab__venn-letter">
+          <text x="178" y="62" className="strategy-lab__venn-letter">
             C
           </text>
-          <text x="202" y="64" className="strategy-lab__venn-letter">
+          <text x="78" y="126" className="strategy-lab__venn-letter">
             F
+          </text>
+          <text x="178" y="126" className="strategy-lab__venn-letter">
+            I
           </text>
         </svg>
       </div>
@@ -651,6 +850,14 @@ function WealthArchitectureTool() {
                     <p>{layer.calibration}</p>
                   </div>
                   <p className="strategy-lab__authority-pill">{layer.authority}</p>
+                  {layer.retirementArchitecture ? (
+                    <div className="strategy-lab__layer-field">
+                      <p className="strategy-lab__label-gold">
+                        RETIREMENT ASSET ARCHITECTURE
+                      </p>
+                      <p>{layer.retirementArchitecture}</p>
+                    </div>
+                  ) : null}
                   {note ? <p className="strategy-lab__profile-note">{note}</p> : null}
                 </div>
               )}
@@ -664,7 +871,7 @@ function WealthArchitectureTool() {
   )
 }
 
-function AssetExposureTool() {
+function AssetExposureTool({ onOpenCoordinationGap }) {
   const [answers, setAnswers] = useState({})
   const [showResult, setShowResult] = useState(false)
 
@@ -789,6 +996,27 @@ function AssetExposureTool() {
               </article>
             ))}
           </div>
+          <div className="strategy-lab__cross-tool">
+            <p className="strategy-lab__cross-tool-eyebrow">TAKE THE NEXT STEP</p>
+            <h4 className="strategy-lab__cross-tool-heading">
+              See Where These Gaps Live
+            </h4>
+            <p className="strategy-lab__cross-tool-body">
+              The exposures identified above don&apos;t exist in isolation. They exist
+              because the professionals who could address them — your attorney, your
+              CPA, your financial adviser, your insurance specialist — are working from
+              separate pictures of your situation rather than a shared one. The
+              Coordination Gap Visualizer maps exactly which gaps exist between the
+              advisers you currently have.
+            </p>
+            <button
+              type="button"
+              className="strategy-lab__cross-tool-btn"
+              onClick={onOpenCoordinationGap}
+            >
+              Open the Coordination Gap Visualizer →
+            </button>
+          </div>
           <a className="strategy-lab__cta" href="/#contact">
             Initiate a Conversation →
           </a>
@@ -865,7 +1093,9 @@ export default function StrategyLabPage() {
         <div className="strategy-lab-page__tool-column">
           {activeTool === 0 && <CoordinationGapTool />}
           {activeTool === 1 && <WealthArchitectureTool />}
-          {activeTool === 2 && <AssetExposureTool />}
+          {activeTool === 2 && (
+            <AssetExposureTool onOpenCoordinationGap={() => setActiveTool(0)} />
+          )}
         </div>
       </main>
     </>
