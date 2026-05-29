@@ -7,12 +7,8 @@ export default function Footer() {
       <div className="container footer__grid">
         <div className="footer__col">
           <p className="footer__name">Aidan M. Drexler</p>
+          <p>Drexler Wealth Strategy</p>
           <p className="footer__title">Private Wealth Strategist</p>
-          <p className="footer__contact">
-            <a href="tel:5613104025">561-310-4025</a>
-            <br />
-            <a href="mailto:drexlerwealth@gmail.com">drexlerwealth@gmail.com</a>
-          </p>
         </div>
 
         <nav className="footer__col footer__nav" aria-label="Footer">

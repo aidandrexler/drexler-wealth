@@ -759,7 +759,7 @@ function CoordinationGapTool() {
                 onClick={() => setExpandedCard(open ? null : cardId)}
               >
                 <h3>{card.title}</h3>
-                <p>{teaser}</p>
+                {!open && <p>{teaser}</p>}
                 <span
                   className="strategy-lab__cal-badge"
                   style={{
