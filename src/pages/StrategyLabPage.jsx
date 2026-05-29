@@ -12,6 +12,10 @@ const CALIBRATION_SYSTEM = {
   ADVANCED: { level: 6, color: '#8B2020', label: 'Advanced Planning' },
 }
 
+const CALIBRATION_LEGEND_LEVELS = Object.values(CALIBRATION_SYSTEM).sort(
+  (a, b) => a.level - b.level
+)
+
 const MASTER_DISCLAIMER =
   'This diagnostic is for educational purposes only and does not constitute legal, tax, investment, or financial planning advice, and nothing here creates a professional relationship of any kind. These tools identify questions to explore with your licensed estate planning attorney, CPA, and registered investment adviser. Aidan M. Drexler is not currently providing investment advisory services. This site does not constitute a solicitation or offer of securities or investment advisory services in any jurisdiction.'
 
@@ -670,6 +674,37 @@ function CoordinationGapTool() {
 
   return (
     <section className="strategy-lab__tool-shell">
+      <div className="strategy-lab__cal-legend">
+        <p className="strategy-lab__cal-legend-heading">HOW GAPS ARE CALIBRATED</p>
+        <p className="strategy-lab__cal-legend-sub">
+          Every gap identified here is directed toward the simplest appropriate next
+          step — not the most complex one.
+        </p>
+        <div className="strategy-lab__cal-legend-pills">
+          {CALIBRATION_LEGEND_LEVELS.map((level) => (
+            <span
+              key={level.level}
+              className="strategy-lab__cal-legend-pill"
+              style={{
+                color: level.color,
+                background: tint(level.color, '1F'),
+                borderColor: tint(level.color, '59'),
+              }}
+            >
+              <span className="strategy-lab__cal-legend-dot" aria-hidden="true">
+                ●
+              </span>
+              Step {level.level}: {level.label}
+            </span>
+          ))}
+        </div>
+        <p className="strategy-lab__cal-legend-note">
+          The gaps identified for your advisory team are tagged with the step that
+          addresses them first.
+        </p>
+        <hr className="strategy-lab__cal-legend-divider" />
+      </div>
+
       <div className="strategy-lab__selector-row">
         {PROFESSIONALS.map((pro) => {
           const active = selected.includes(pro.id)

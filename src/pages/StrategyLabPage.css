@@ -94,6 +94,69 @@
   width: 100%;
 }
 
+.strategy-lab__cal-legend-heading {
+  font-family: var(--font-ui);
+  font-size: 9px;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.strategy-lab__cal-legend-sub {
+  margin-top: 8px;
+  margin-bottom: 16px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--mist);
+}
+
+.strategy-lab__cal-legend-pills {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.strategy-lab__cal-legend-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 2px;
+  font-family: var(--font-ui);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  margin: 3px 4px 3px 0;
+  border: 1px solid;
+}
+
+.strategy-lab__cal-legend-dot {
+  font-size: 8px;
+  line-height: 1;
+}
+
+.strategy-lab__cal-legend-note {
+  margin-top: 8px;
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-style: italic;
+  color: var(--mist);
+}
+
+.strategy-lab__cal-legend-divider {
+  margin: 20px 0 24px;
+  border: none;
+  border-top: 1px solid var(--smoke);
+}
+
+@media (min-width: 720px) {
+  .strategy-lab__cal-legend-pills {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
 .strategy-lab__selector-row {
   display: grid;
   gap: 12px;
