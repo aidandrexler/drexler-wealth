@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
+import { LAYER_SITUATION_SUBITEMS } from '../data/architectureSituationSubitems'
 import './StrategyLabPage.css'
 
 const CALIBRATION_SYSTEM = {
@@ -275,14 +276,6 @@ const GAP_CARD_DATA = {
     },
   ],
 }
-
-const ARCHITECTURE_PROFILES = [
-  'Young Professional',
-  'Business Owner',
-  'Professional Practice',
-  'Real Estate Investor',
-  'HNW Family',
-]
 
 const ARCHITECTURE_LAYERS = [
   {
@@ -621,6 +614,44 @@ function ToolDisclaimer() {
   return <p className="strategy-lab__tool-disclaimer">{MASTER_DISCLAIMER}</p>
 }
 
+function LayerSituationSection({ layerId }) {
+  const subItems = LAYER_SITUATION_SUBITEMS[layerId]
+  const [openItem, setOpenItem] = useState(null)
+
+  if (!subItems?.length) return null
+
+  return (
+    <div className="strategy-lab__situation">
+      <p className="strategy-lab__situation-label">
+        WHAT THIS MEANS FOR YOUR SITUATION
+      </p>
+      {subItems.map((item) => {
+        const isOpen = openItem === item.label
+        return (
+          <div key={item.label} className="strategy-lab__situation-item">
+            <button
+              type="button"
+              className="strategy-lab__situation-header"
+              onClick={() =>
+                setOpenItem(isOpen ? null : item.label)
+              }
+              aria-expanded={isOpen}
+            >
+              <span>{item.label}</span>
+              <span className="strategy-lab__situation-icon" aria-hidden="true">
+                {isOpen ? '−' : '+'}
+              </span>
+            </button>
+            {isOpen ? (
+              <div className="strategy-lab__situation-body">{item.content}</div>
+            ) : null}
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
 function CoordinationGapTool() {
   const [selected, setSelected] = useState([])
   const [expandedCard, setExpandedCard] = useState(null)
@@ -772,7 +803,6 @@ function CoordinationGapTool() {
 }
 
 function WealthArchitectureTool() {
-  const [profile, setProfile] = useState(ARCHITECTURE_PROFILES[0])
   const [expandedLayers, setExpandedLayers] = useState(['layer1'])
 
   const toggleLayer = (layerId) => {
@@ -785,23 +815,9 @@ function WealthArchitectureTool() {
 
   return (
     <section className="strategy-lab__tool-shell">
-      <div className="strategy-lab__profile-select">
-        {ARCHITECTURE_PROFILES.map((item) => (
-          <button
-            key={item}
-            type="button"
-            className={`strategy-lab__profile-pill ${profile === item ? 'is-active' : ''}`}
-            onClick={() => setProfile(item)}
-          >
-            {item}
-          </button>
-        ))}
-      </div>
-
       <div className="strategy-lab__layers">
         {ARCHITECTURE_LAYERS.map((layer) => {
           const open = expandedLayers.includes(layer.id)
-          const note = layer.profileNotes[profile] || layer.profileNotes.all
           return (
             <article
               key={layer.id}
@@ -858,7 +874,7 @@ function WealthArchitectureTool() {
                       <p>{layer.retirementArchitecture}</p>
                     </div>
                   ) : null}
-                  {note ? <p className="strategy-lab__profile-note">{note}</p> : null}
+                  <LayerSituationSection layerId={layer.id} />
                 </div>
               )}
             </article>

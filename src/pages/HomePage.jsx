@@ -69,11 +69,12 @@ export default function HomePage() {
     <>
       <Helmet>
         <title>
-          Drexler Wealth Strategy | Private Wealth Strategist | Palm Beach County
+          Drexler Wealth Strategy | Aidan M. Drexler | Palm Beach County,
+          Florida
         </title>
         <meta
           name="description"
-          content="Bridging legal architecture, tax strategy, and asset protection for Florida business owners, professionals, and families. Palm Beach County."
+          content="Wealth, structured with intention. Integrated wealth strategy for Florida families, business owners, and professionals. Palm Beach County."
         />
       </Helmet>
 
@@ -81,11 +82,9 @@ export default function HomePage() {
         <div className="hero__content">
           <div className="hero__rule" aria-hidden="true" />
           <h1 className="hero__name">Aidan M. Drexler</h1>
+          <p className="hero__firm">Drexler Wealth Strategy</p>
           <p className="hero__title">Private Wealth Strategist</p>
-          <p className="hero__hook">
-            Bridging legal architecture, tax strategy, and asset protection for
-            the modern business owner.
-          </p>
+          <p className="hero__hook">Wealth, structured with intention.</p>
           <p className="hero__credentials">
             J.D. Candidate · Series 65 Candidate · B.B.A. Finance
           </p>

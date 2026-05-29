@@ -372,6 +372,58 @@
   padding: 9px 11px;
 }
 
+.strategy-lab__situation {
+  margin-top: 20px;
+}
+
+.strategy-lab__situation-label {
+  font-family: var(--font-body);
+  font-size: 9px;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  margin-top: 0;
+}
+
+.strategy-lab__situation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 9px 0;
+  border: none;
+  border-bottom: 1px solid var(--smoke);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--steel);
+  letter-spacing: 0.04em;
+  text-align: left;
+  transition: color 0.15s;
+}
+
+.strategy-lab__situation-header:hover {
+  color: var(--fog);
+}
+
+.strategy-lab__situation-icon {
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+.strategy-lab__situation-body {
+  padding: 10px 0 14px 0;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  color: var(--fog);
+  line-height: 1.85;
+  border-bottom: 1px solid var(--smoke);
+  white-space: pre-line;
+}
+
 .strategy-lab__diagnostic-progress {
   font-size: 9px;
   letter-spacing: 0.14em;

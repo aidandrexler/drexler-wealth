@@ -43,6 +43,18 @@
   line-height: 1.1;
 }
 
+.hero__firm {
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 10px;
+  margin-bottom: 0;
+  opacity: 0.85;
+}
+
 .hero__title {
   font-size: 11px;
   font-weight: 400;
