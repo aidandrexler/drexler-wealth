@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import fs from 'fs'
 import path from 'path'
+import { isPublishedDate, parseFrontmatter } from './src/utils/parseMd.js'
 
 const DOMAIN = 'https://drexlerwealth.com'
 const STATIC_ROUTES = ['/', '/strategy-lab', '/insights']
@@ -15,6 +16,10 @@ function generateSitemap() {
   if (fs.existsSync(blogDir)) {
     const files = fs.readdirSync(blogDir).filter((f) => f.endsWith('.md'))
     for (const file of files) {
+      const raw = fs.readFileSync(path.join(blogDir, file), 'utf-8')
+      const { data } = parseFrontmatter(raw)
+      if (!isPublishedDate(data.date)) continue
+
       const slug = file.replace(/\.md$/, '')
       urls.push(
         `  <url>\n    <loc>${DOMAIN}/insights/${slug}</loc>\n    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>\n  </url>`

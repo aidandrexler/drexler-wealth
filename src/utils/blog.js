@@ -1,4 +1,4 @@
-import { parseFrontmatter } from './parseMd'
+import { isPublishedDate, parseFrontmatter } from './parseMd'
 
 const modules = import.meta.glob('../../content/blog/*.md', {
   query: '?raw',
@@ -11,7 +11,7 @@ function parseDate(dateStr) {
 }
 
 export function getAllArticles() {
-  const articles = Object.entries(modules).map(([path, raw]) => {
+  const allArticles = Object.entries(modules).map(([path, raw]) => {
     const { data, content } = parseFrontmatter(raw)
     const slug = path.replace(/^.*\//, '').replace(/\.md$/, '')
     return {
@@ -25,7 +25,11 @@ export function getAllArticles() {
     }
   })
 
-  return articles.sort((a, b) => b.dateObj - a.dateObj)
+  const publishedArticles = allArticles.filter((article) =>
+    isPublishedDate(article.date)
+  )
+
+  return publishedArticles.sort((a, b) => b.dateObj - a.dateObj)
 }
 
 export function getArticleBySlug(slug) {
